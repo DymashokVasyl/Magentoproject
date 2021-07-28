@@ -1,0 +1,85 @@
+& when (@media-common =true) {
+    .cms-home.cms-index-index.page-layout-1column {
+        .page-wrapper>main.page-main {
+            max-width: 1920px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-sections {
+            margin: 0;
+        }
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+        padding: 0;
+        margin: 0;
+        color: @color-elogic-black;
+    }
+
+    .banner__wrap {
+        background-color: @color-elogig-bg;
+        padding: 5rem;
+        .banner__body {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-box-align(center);
+            justify-content: space-around;
+            max-width: 1000px;
+            margin: 0 auto;
+
+            .banner__text {
+                .banner__title {
+                    letter-spacing: @line-height__l px;
+                    .lib-font-size(36);
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                    span {
+                        font-weight: @font-weight__semibold;
+                    }
+                }
+                .banner__subtitle{
+                    color: @color-elogic-gray-main;
+                    text-transform: capitalize;
+                    margin-bottom: 3rem;
+                }
+
+                .banner__link{
+
+                    &:hover , &:active , &:focus{
+                        color: @color-elogic-gray-main;
+                        border-color: @color-elogic-gray-main;
+                    }
+
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    .lib-font-size(15);
+                    border-bottom: 1px solid @color-elogic-black;
+                    padding-bottom: 0.5rem;
+
+
+                }
+            }
+        }
+
+    }
+  
+}
+
+// 768px
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+// 1023px 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}
