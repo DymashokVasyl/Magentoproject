@@ -1,7 +1,7 @@
 & when (@media-common =true) {
     .cms-home.cms-index-index.page-layout-1column {
         .page-wrapper>main.page-main {
-            max-width: 1920px;
+            max-width: 100%;
             width: 100%;
             padding: 0;
             margin: 0;
@@ -10,6 +10,14 @@
         .nav-sections {
             margin: 0;
         }
+    }
+
+    body {
+        .lib-css(margin, 0);
+        .lib-css(padding, 0);
+        .lib-css(color, @color-elogic-gray-main);
+        list-style: none;
+
     }
 
 
@@ -25,6 +33,24 @@
         color: @color-elogic-black;
     }
 
+    .widget.block.block-static-block {
+        a {
+            .lib-css(color, @color-elogic-black);
+            .lib-font-size(15);
+            transition: all 0.3s ease-in-out;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            -ms-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+
+        }
+    }
+
+    .content-wrap {
+        margin: 0 auto;
+        width: 100%;
+    }
+
     .banner__wrap {
         background-color: @color-elogig-bg;
         padding: 5rem;
@@ -34,7 +60,7 @@
             .lib-vendor-box-align(center);
             justify-content: space-around;
             flex-wrap: wrap;
-            max-width: 1000px;
+            max-width: 1240px;
             margin: 0 auto;
 
             .banner__text {
@@ -43,14 +69,15 @@
                     .lib-font-size(36);
                     text-transform: uppercase;
                     margin-bottom: 0.5rem;
+                    .lib-css(font-weight, @font-weight__semibold);
 
                     span {
-                        font-weight: @font-weight__semibold;
+                        .lib-css(font-weight, @font-weight__light);
                     }
                 }
 
                 .banner__subtitle {
-                    color: @color-elogic-gray-main;
+                    .lib-css(color, @color-elogic-gray-main);
                     text-transform: capitalize;
                     margin-bottom: 3rem;
                 }
@@ -60,16 +87,14 @@
                     &:hover,
                     &:active,
                     &:focus {
-                        color: @color-elogic-gray-main;
-                        border-color: @color-elogic-gray-main;
+                        .lib-css(color, @color-elogic-gray-main);
+                        border-bottom: 1px solid @color-elogic-black;
                     }
 
-                    color: @color-elogic-black;
+
                     text-decoration: none;
                     text-transform: uppercase;
-                    .lib-font-size(15);
-                    border-bottom: 1px solid @color-elogic-black;
-                    padding-bottom: 0.5rem;
+
 
 
                 }
@@ -80,6 +105,108 @@
 
 }
 
+
+.categories__wrap {
+    .lib-vendor-prefix-display(flex);
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 88px;
+    .categorie__item {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-box-align(center);
+        .lib-css(background-color, @color-elogig-bg);
+        justify-content: center;
+        // flex: 0 0 50%;
+        height: auto;
+        width: 50%;
+
+        .categorie__pic {
+            align-self: flex-start;
+            flex: 0 0 50%;
+        }
+
+        .categorie__text {
+            .categorie__title {
+
+                span {
+                    .lib-css(font-weight, @font-weight__light);
+                }
+
+                .lib-font-size(36);
+                .lib-css(font-weight, @font-weight__semibold);
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                padding-bottom: 0.5rem;
+            }
+
+            .categorie__subtitle {
+                .lib-css(color, @color-elogic-gray-main );
+                .lib-css(font-style, @font-style__emphasis);
+                text-transform: capitalize;
+                padding-bottom: 1.5rem;
+            }
+
+            .categorie__link {
+
+                &:hover,
+                &:active,
+                &:focus {
+                    .lib-css(color, @color-elogic-gray-main);
+                    border-bottom: 1px solid @color-elogic-black;
+                }
+
+
+                text-decoration: none;
+                text-transform: uppercase;
+
+
+            }
+        }
+
+
+
+
+    }
+}
+
+// Our Products
+.our_products__wrap {
+    .our_products__text{
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        position: relative;
+        .our_products__title{
+            .lib-font-size(24);
+            .lib-css(font-weight, @font-weight__semibold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding-bottom: 0.5rem; 
+            padding: 0;
+        }
+
+        .our_products__subtitle{
+            .lib-css(color, @color-elogic-gray-main);
+            .lib-font-size(14);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+        }
+        &::after{
+            content: "";
+            width: 30px;
+            height: 3px;
+            .lib-css(background, @color-elogic-black);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+
+// Media
+
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
     .banner__wrap>.banner__body {
         .banner__text {
@@ -89,6 +216,25 @@
             }
         }
     }
+
+    .categories__wrap {
+        .categorie__item {
+            .categorie__text {
+                .categorie__title {
+                    .lib-css(font-size, @font-size__s);
+                }
+
+                .categorie__subtitle,
+                .categorie__link {
+                    .lib-css(font-size, @font-size__xs);
+
+                }
+            }
+
+        }
+    }
+
+
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
@@ -106,6 +252,32 @@
         }
 
     }
+
+    .categories__wrap {
+        .categorie__item {
+            .categorie__text {
+                .categorie__title {
+                    .lib-css(font-size, @font-size__xl);
+                }
+
+                .categorie__subtitle,
+                .categorie__link {
+                    .lib-css(font-size, @font-size__base);
+
+                }
+            }
+
+            .categorie__pic>img {
+                max-width: 60%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+
+
+
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
@@ -114,24 +286,54 @@
             text-align: center;
 
         }
+
         .banner__pic {
             max-width: 75%;
             padding-top: 40px;
         }
     }
+    .categories__wrap {
+        .categorie__item {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
 }
 
+
+
+
+// From 480px to 640px
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xs) {
+    .content-wrap {
+        max-width: 100%;
+    }
+
+}
+
+
+// From 640px to 768px
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__s) {}
+
+// From 768px to 1024px
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .banner__wrap>.banner__body {
         .banner__text {
             text-align: center;
         }
+
         .banner__pic {
             padding-top: 35px;
         }
     }
+
+    .content-wrap {
+        max-width: 750px;
+    }
+
 }
 
+// From 1024px to 1440px
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
     .banner__wrap>.banner__body {
         .banner__text {
@@ -142,4 +344,32 @@
             padding-top: 0;
         }
     }
+
+    .content-wrap {
+        max-width: 970px;
+    }
+
 }
+
+// From 1200px to 1440px
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
+    .content-wrap {
+        max-width: 1350px;
+    }
+
+}
+
+// From 1440px to ...
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xxl) {
+    .content-wrap {
+        max-width: 1420px;
+    }
+
+}
+
+// @screen__xxs: 320px;
+// @screen__xs: 480px;
+// @screen__s: 640px;
+// @screen__m: 768px;
+// @screen__l: 1024px;
+// @screen__xl: 1440px;
