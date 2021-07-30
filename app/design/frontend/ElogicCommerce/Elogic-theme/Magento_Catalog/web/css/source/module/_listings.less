@@ -27,6 +27,7 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+
     //  Product Lists
     .products {
         margin: @indent__l 0;
@@ -269,6 +270,56 @@
             &:extend(.abs-reset-image-wrapper all);
         }
     }
+    .page-layout-1column {
+        .block.widget{
+            .products-grid {
+                .product-items{
+                    display: flex;
+                    .product-item{
+                        flex: 0 0 25%;
+                        .product-item-info .product-item-details {
+                            .product-item-name{
+                                text-align: center;
+                                
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                a{
+                                    .lib-css(color,@color-elogic-gray-main);
+                                }
+                            }
+                            .price-box{
+                                text-align: center;
+                                .lib-css(font-family,@font-family-name__oswald);
+                                .special-price{
+                                    .price{
+                                        .lib-css(color,@color-elogic-black); 
+                                        .lib-css(font-size,@font-size__l);
+                                    }
+                                }
+                                .old-price{
+                                    .price-label{
+                                        display: none;
+                                    }
+                                    .price{
+                                        text-decoration: line-through;
+                                        .lib-font-size(14);
+                                        .lib-css(color,@color-elogic-gray-discount); 
+                                        .lib-css(font-weight,@font-weight__regular);
+
+                                    }
+                                }
+
+                            }
+                        }
+                    
+                    }
+                }
+            }
+            .pager .toolbar-amount{
+                display: none;
+            }
+        } 
+    }
 }
 
 //
@@ -295,30 +346,30 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
-    .product-item-info {
-        .products-grid & {
-            &:hover,
-            &.active {
-                .lib-css(background, @product-item__hover__background-color);
-                .lib-css(box-shadow, @product-item__hover__box-shadow);
-                border: 1px solid @color-gray-light2;
-                margin: -10px;
-                padding: 9px;
-                position: relative;
-                z-index: 9;
+    // .product-item-info {
+    //     .products-grid & {
+    //         &:hover,
+    //         &.active {
+    //             .lib-css(background, @product-item__hover__background-color);
+    //             .lib-css(box-shadow, @product-item__hover__box-shadow);
+    //             border: 1px solid @color-gray-light2;
+    //             margin: -10px;
+    //             padding: 9px;
+    //             position: relative;
+    //             z-index: 9;
 
-                .product-item-inner {
-                    display: block;
-                }
-                .sidebar & {
-                    .product-item-photo {
-                        left: 9px;
-                        top: 9px;
-                    }
-                }
-            }
-        }
-    }
+    //             .product-item-inner {
+    //                 display: block;
+    //             }
+    //             .sidebar & {
+    //                 .product-item-photo {
+    //                     left: 9px;
+    //                     top: 9px;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     .product-item-inner {
         .products-grid & {
