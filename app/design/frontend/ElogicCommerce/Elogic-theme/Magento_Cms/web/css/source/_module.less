@@ -32,6 +32,12 @@
         color: @color-elogic-black;
     }
 
+    a{
+        -webkit-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
     .container {
         margin: 0 auto;
     }
@@ -58,9 +64,7 @@
         .lib-css(color, @color-elogic-black);
         border-bottom: 1px solid @color-elogic-black;
         padding-bottom: 5px;
-        -webkit-transition: all .4s ease;
-        -o-transition: all .4s ease;
-        transition: all .4s ease;
+
     }
 
     .banner__wrapper {
@@ -272,6 +276,66 @@
 
         .november_sale__text {
             margin-bottom: 15px;
+        }
+    }
+}
+
+.shop_by_brands {
+    margin: 0 15px;
+
+    .shop_by_brands__text {
+        overflow: hidden;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .shop_by_brands__title {
+        text-transform: capitalize;
+        font-weight: 400;
+        padding: 0 5px;
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &::after {
+            content: "";
+            width: 200%;
+            position: absolute;
+            top: 50%;
+            border-top: 1px solid #ebebeb;
+        }
+
+        &:before {
+            left: 100%;
+        }
+
+        &::after {
+            right: 100%;
+        }
+    }
+
+    .shop_by_brands__items {
+        .lib-list-reset-styles();
+        display: flex;
+        justify-content: center;
+
+        .shop_by_brands__item {
+            flex: 0 0 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .brand__name{
+            margin-top: 10px;
+            a{
+                color: #222222;
+                text-decoration: none;
+                &:hover{
+                    color: #888888;
+                }
+            }
         }
     }
 }
