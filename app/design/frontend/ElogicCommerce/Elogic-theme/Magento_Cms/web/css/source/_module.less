@@ -4,7 +4,7 @@
 & when (@media-common =true) {
     .cms-home.cms-index-index.page-layout-1column {
         .page-wrapper>main.page-main {
-            max-width: 1920px;
+            max-width: 100%;
             width: 100%;
             padding: 0;
             margin: 0;
@@ -30,7 +30,7 @@
     h2.title {
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        .lib-font-size(36);
+        .lib-font-size(@font-size__elogic__xl);
         .lib-css(color, @color-elogic-black);
         .lib-css(font-weight, @font-weight__bold)
     }
@@ -54,7 +54,7 @@
         .lib-css(background-color, @color-elogig-bg);
         .lib-vendor-prefix-display(flex);
         justify-content: center;
-        padding: 60px 40px 110px;
+        padding: ceil(@indent__base + @indent__xl) @indent__xl ceil((@indent__m*4) + @indent__s);
 
         .banner__body {
             .lib-vendor-prefix-display(flex);
@@ -73,6 +73,7 @@
 
                 a.link {
                     padding-bottom: 5px;
+                    
                 }
             }
 
@@ -86,18 +87,22 @@
     }
 }
 
+//
+//  Mobile
+//  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
     h2.title {
-        .lib-font-size(25);
+        .lib-font-size(@font-size__elogic__l);
     }
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .banner__wrapper {
-        padding: 25px 20px 45px;
+        padding: @indent__m @indent__base ceil(@indent__base + @indent__m);
 
         .banner__body {
-            flex-direction: column;
+            .lib-vendor-prefix-flex-direction(column);
 
             div {
                 flex: 0 0 100%;
@@ -105,10 +110,10 @@
 
             .banner__text {
                 text-align: center;
-                margin-bottom: 25px;
+                margin-bottom: @indent__m;
 
                 .subtitle {
-                    padding-bottom: 25px;
+                    padding-bottom: @indent__m;
                 }
             }
 
@@ -118,6 +123,10 @@
         }
     }
 }
+
+//
+//  Desktop
+//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l ) {
     .banner__wrapper {
