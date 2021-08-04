@@ -15,5 +15,7 @@
         <referenceBlock name="footer_links">
 
         </referenceBlock>
+
+        <move element="form.subscribe" destination="footer-container" before="-"/>
     </body>
 </page>

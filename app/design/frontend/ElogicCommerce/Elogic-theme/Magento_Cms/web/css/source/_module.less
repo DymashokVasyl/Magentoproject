@@ -104,7 +104,7 @@
 }
 
 .category__wrap_items {
-    display: flex;
+    .lib-vendor-prefix-display(flex);
 
     .category__item {
         .lib-css(background-color, @color-elogig-bg);
@@ -112,7 +112,7 @@
         margin: 0 15px;
         padding-bottom: 30px;
         .lib-vendor-prefix-display(flex);
-        flex-direction: column;
+        .lib-vendor-prefix-flex-direction(column);
 
         .categorie__text {
             align-self: center;
@@ -174,9 +174,9 @@
     padding: 50px 100px;
     margin: 0 15px;
     position: relative;
-    display: flex;
+    .lib-vendor-prefix-display(flex);
     justify-content: space-between;
-    flex-direction: column;
+    .lib-vendor-prefix-flex-direction(column);
     align-items: center;
 
     &::before {
@@ -226,7 +226,7 @@
     }
 
     .category__wrap_items {
-        flex-direction: column;
+        .lib-vendor-prefix-flex-direction(column);
         .lib-vendor-box-align(center);
         padding: 0 15px;
 
@@ -250,7 +250,7 @@
         padding: 25px 20px 45px;
 
         .banner__body {
-            flex-direction: column;
+            .lib-vendor-prefix-flex-direction(column);
 
             div {
                 flex: 0 0 100%;
@@ -317,13 +317,13 @@
 
     .shop_by_brands__items {
         .lib-list-reset-styles();
-        display: flex;
+        .lib-vendor-prefix-display(flex);
         justify-content: center;
 
         .shop_by_brands__item {
             flex: 0 0 20%;
-            display: flex;
-            flex-direction: column;
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(column);
             justify-content: center;
             align-items: center;
         }
@@ -355,7 +355,7 @@
     .category__wrap_items {
 
         .category__item {
-            flex-direction: row;
+            .lib-vendor-prefix-flex-direction(row);
 
             .categorie__text {
                 text-align: left;
@@ -391,7 +391,7 @@
     }
 
     .november__sale {
-        flex-direction: row;
+        .lib-vendor-prefix-flex-direction(row);
 
         .november_sale__text {
             text-align: left;
