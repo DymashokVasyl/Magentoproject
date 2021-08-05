@@ -1,8 +1,5 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+
 use Magento\Framework\App\Action\Action;
 
 /** @var \Magento\CatalogWidget\Block\Product\ProductsList $block */
@@ -25,7 +22,7 @@ use Magento\Framework\App\Action\Action;
 
     <?php 
     $_imageHelper = $this->helper('Magento\Catalog\Helper\Image');
-    $_imageHover = 'switch_product_list';
+    $_imageSwitch = 'switch_product_list';
     $pos = $block->getPositioned();
     ?>
     <div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
@@ -45,32 +42,30 @@ use Magento\Framework\App\Action\Action;
                             <div class="product-photo">
                                 <?php
                                 $productImage = $block->getImage($_item, $image);
-                                $productImageHover = $_imageHelper->init($_item, $_imageHover);
+                                $productImageSwitch = $_imageHelper->init($_item, $_imageSwitch);
                                 if ($pos != null) {
                                 $position = ' style="left:' . $productImage->getWidth() . 'px;'
                                 . 'top:' . $productImage->getHeight() . 'px;"';
                                 }
                                 ?>
                                 <?php // Product Image ?>
-                                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product photo product-item-photo" tabindex="-1">
-                                <?= $block->getImage($_item, $image)->toHtml() ?>
-                                </a>
-                                <?php //Product Image Hovered ?>
-                                <?php if (strpos($productImageHover->getUrl(), 'Magento_Catalog/images/product/placeholder/image_switch.jpg') == false) : ?>
-                                    <a href="<?php /* @escapeNotVerified */
-                                    echo $_item->getProductUrl() ?>" class="product photo product-item-photo-switch"
-                                    tabindex="-1">
-                                    <img src="<?php echo $productImageHover->getUrl(); ?>"
-                                    class="photo-image-switch" width="<?php echo $productImage->getWidth(); ?>"
-                                    height="<?php echo $productImage->getWidth() ?>"
-                                    alt="<?php echo $productImageHover->getLabel() ?>"/>
+                                    <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo product-item-front-photo">
+                                        <?= $block->getImage($_item, $image)->toHtml() ?>
                                     </a>
+                                <?php //Product Image Hovered ?>
+                                <?php if (strpos($productImageSwitch->getUrl(), 'Magento_Catalog/images/product/placeholder/image_switch.jpg') == false) : ?>
+
+                                    <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo product-item-back-photo">
+                                        <?= $block->getImage($_item, $_imageSwitch)->toHtml() ?>
+                                    </a>
+
+
                                 <?php endif; ?>
                                 <?php if ($showWishlist || $showCompare) : ?>
                                     <div class="actions-secondary" data-role="add-to-links">
                                         <ul class="add-to-links">
                                             <li class="quickview-product">
-                                                <a href="#">
+                                                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" title="<?= $block->escapeHtmlAttr(__('Quick view')) ?>">
                                                 <i class="far fa-eye"></i>
                                                 </a>
                                             </li>
