@@ -3,16 +3,11 @@
 
 & when (@media-common =true) {
     .cms-home.cms-index-index.page-layout-1column {
-
-        .page-wrapper {
-
-            main.page-main {
-                max-width: 100%;
-                width: 100%;
-                padding: 0;
-                margin: 0;
-            }
-
+        .page-wrapper>main.page-main {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
         }
 
         .nav-sections {
@@ -32,7 +27,7 @@
         color: @color-elogic-black;
     }
 
-    a{
+    a {
         -webkit-transition: all .4s ease;
         -o-transition: all .4s ease;
         transition: all .4s ease;
@@ -45,7 +40,7 @@
     h2.title {
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        .lib-font-size(36);
+        .lib-font-size(@font-size__elogic__xl);
         .lib-css(color, @color-elogic-black);
         .lib-css(font-weight, @font-weight__bold)
     }
@@ -63,15 +58,15 @@
         text-decoration: none;
         .lib-css(color, @color-elogic-black);
         border-bottom: 1px solid @color-elogic-black;
-        padding-bottom: 5px;
-
+        padding-bottom: @indent__xs;
+        transition: all .4s ease;
     }
 
     .banner__wrapper {
         .lib-css(background-color, @color-elogig-bg);
         .lib-vendor-prefix-display(flex);
         justify-content: center;
-        padding: 60px 40px 110px;
+        padding: ceil(@indent__base + @indent__xl) @indent__xl ceil((@indent__m*4) + @indent__s);
 
         .banner__body {
             .lib-vendor-prefix-display(flex);
@@ -87,10 +82,6 @@
                     .lib-css(color, @color-elogic-gray-main);
                     padding-bottom: 10%;
                 }
-
-                a.link {
-                    padding-bottom: 5px;
-                }
             }
 
             .banner__pic>img {
@@ -101,75 +92,125 @@
             }
         }
     }
+<<<<<<< HEAD
 }
 
 .category__wrap_items {
     .lib-vendor-prefix-display(flex);
+=======
+>>>>>>> task8
 
-    .category__item {
-        .lib-css(background-color, @color-elogig-bg);
-        width: 50%;
-        margin: 0 15px;
-        padding-bottom: 30px;
+    .category__wrap_items {
         .lib-vendor-prefix-display(flex);
+<<<<<<< HEAD
         .lib-vendor-prefix-flex-direction(column);
+=======
+>>>>>>> task8
 
-        .categorie__text {
-            align-self: center;
-            padding: 0 50px;
-            text-align: center;
+        .category__item {
+            .lib-css(background-color, @color-elogig-bg);
+            width: 50%;
+            margin: 0 @indent__sl;
+            padding-bottom: @indent__l;
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(column);
 
-            .categorie__subtitle {
-                margin-bottom: 15px;
-                .lib-css(font-style, @font-style__emphasis);
+            .categorie__text {
+                align-self: center;
+                padding: 0 ceil(@indent__m*2);
+                text-align: center;
+
+                .categorie__subtitle {
+                    margin-bottom: @indent__sl;
+                    .lib-css(font-style, @font-style__emphasis);
+                }
             }
-        }
 
-        .categorie__pic {
-            width: 100%;
-            padding-left: 0px;
-            padding-bottom: 15px;
+            .categorie__pic {
+                width: 100%;
+                height: 60%;
+                padding-left: 0;
+                padding-bottom: @indent__sl;
 
-            img {
-                max-width: 70%;
-                display: block;
-                margin: 0 auto;
+                img {
+                    max-width: 70%;
+                    display: block;
+                    margin: 0 auto;
+                }
             }
 
         }
     }
-}
 
-.our_products__wrap {
-    .our_products__text {
-        padding-bottom: 20px;
-        margin: 30px 15px;
+
+    .our_products__wrap {
+        .our_products__text {
+            padding-bottom: @indent__base;
+            margin: @indent__l @indent__sl;
+            position: relative;
+
+            .our_products__title {
+                .lib-font-size(@font-size__elogic__ls);
+            }
+
+            .our_products__subtitle {
+                text-transform: uppercase;
+                padding-bottom: @indent__xs;
+                letter-spacing: 1px
+            }
+
+            &::after {
+                content: "";
+                width: 30px;
+                height: 3px;
+                .lib-css(background, @color-elogic-black);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .november__sale {
+        padding: ceil(2*@indent__m) ceil(4*@indent__m);
+        margin: 0 @indent__sl;
         position: relative;
+        .lib-vendor-prefix-display(flex);
+        justify-content: space-between;
+        .lib-vendor-prefix-flex-direction(column);
+        align-items: center;
 
-        .our_products__title {
-            .lib-font-size(24);
-            padding-bottom: 0.5rem;
-            padding: 0;
-        }
-
-        .our_products__subtitle {
-            text-transform: uppercase;
-            padding-bottom: 5px;
-            letter-spacing: 1px
-        }
-
-        &::after {
-            content: "";
-            width: 30px;
-            height: 3px;
-            .lib-css(background, @color-elogic-black);
+        &::before {
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-image: @banner__background-image;
+            background-repeat: no-repeat;
+            background-position-y: 30%;
+            background-size: cover;
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
+            z-index: -1;
         }
-    }
-}
 
+        .november_sale__text {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: @indent__l;
+
+            .november_sale__title {
+                margin: 0;
+            }
+
+            .november_sale__link {
+                align-self: center;
+            }
+        }
+
+    }
+
+<<<<<<< HEAD
 .november__sale {
     padding: 50px 100px;
     margin: 0 15px;
@@ -197,34 +238,189 @@
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 30px;
+=======
+    .news_blog__wrap {
+        margin: 0 @indent__sl;
 
-        .november_sale__title {
-            margin: 0;
+        .news_blog__heading {
+            margin-top: ceil(@indent__xl + @indent__l);
+            margin-bottom: @indent__l;
+            padding-bottom: @indent__base;
+            position: relative;
+
+            .news_blog__title {
+                .lib-font-size(@font-size__elogic__ls);
+            }
+
+            .news_blog__subtitle {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding-bottom: @indent__xs;
+            }
+
+            &::after {
+                content: "";
+                width: 30px;
+                height: 3px;
+                .lib-css(background, @color-elogic-black);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
         }
 
-        .november_sale__link {
-            align-self: center;
+        .news_blog__items {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            margin: 0 -@indent__sl;
+
+        }
+
+        .blog_item__content {
+            margin: 0 @indent__sl;
+>>>>>>> task8
+
+        }
+
+        .blog_item__title {
+            .title {
+                margin: @indent__m 0 0;
+                padding-bottom: @indent__sl;
+                .lib-font-size(@font-size__base);
+                text-transform: uppercase;
+
+                a {
+                    .lib-css(color, @color-elogic-black);
+                    line-height: @line-height__l;
+                }
+
+            }
+        }
+
+        .blog_item_time {
+            .lib-css(color, @color-elogic-gray-main);
+
+            i {
+                display: inline-block;
+                .lib-font-size(15);
+                margin-right: @indent__xs;
+                margin-top: 2px;
+            }
+        }
+
+        .date__wrap {
+            display: inline-block;
+            .lib-css(color, @color-elogic-gray-main);
+            .lib-font-size(13);
+            .lib-css(font-style, @font-style__emphasis);
+        }
+
+        .blog_item_short__desc {
+            letter-spacing: .25px;
+            margin-top: @indent__sl;
+            line-height: @line-height__l;
+            .lib-css(font-weight, @font-weight__light);
+
+            p {
+                .lib-css(color, @color-elogic-gray-main);
+            }
+
+
+        }
+    }
+
+    .shop_by_brands {
+        margin: 0 @indent__sl;
+
+        .shop_by_brands__text {
+            overflow: hidden;
+            margin-top: @indent__xl;
+            margin-bottom: @indent__l;
+            text-align: center;
+        }
+
+        .shop_by_brands__title {
+            text-transform: capitalize;
+            font-weight: @font-weight__regular;
+            padding: 0 @indent__xs;
+            position: relative;
+            display: inline-block;
+
+            &:before,
+            &::after {
+                content: "";
+                width: 200%;
+                position: absolute;
+                top: 50%;
+                border-top: 1px solid @color-elogic-gray-secondary;
+            }
+
+            &:before {
+                left: 100%;
+            }
+
+            &::after {
+                right: 100%;
+            }
+        }
+
+        .shop_by_brands__items {
+            .lib-list-reset-styles();
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            justify-content: center;
+
+            .shop_by_brands__item {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-flex-direction(column);
+                justify-content: center;
+                .lib-vendor-box-align(center);
+            }
+
+            .brand__name {
+                margin-top: @indent__s;
+
+                a {
+                    color: @color-elogic-black;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: @color-elogic-gray-main;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item {
+                flex: 0 0 100%
+            }
         }
     }
 
 }
 
-
-
-
-
-
-// --------------
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
     h2.title {
-        .lib-font-size(25);
+        .lib-font-size(@font-size__elogic__l);
     }
 
-    p.subtitle,
+    // p.subtitle,
     a.link {
-        .lib-font-size(12);
+        .lib-font-size(@font-size__elogic__s);
     }
 
+<<<<<<< HEAD
     .category__wrap_items {
         .lib-vendor-prefix-flex-direction(column);
         .lib-vendor-box-align(center);
@@ -235,6 +431,8 @@
             margin-bottom: 15px;
         }
     }
+=======
+>>>>>>> task8
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
@@ -243,11 +441,11 @@
     }
 
     h2.title {
-        .lib-font-size(30);
+        .lib-font-size(@font-size__elogic__l);
     }
 
     .banner__wrapper {
-        padding: 25px 20px 45px;
+        padding: @indent__m @indent__base ceil(@indent__base + @indent__m);
 
         .banner__body {
             .lib-vendor-prefix-flex-direction(column);
@@ -258,10 +456,10 @@
 
             .banner__text {
                 text-align: center;
-                margin-bottom: 25px;
+                margin-bottom: @indent__m;
 
                 .subtitle {
-                    padding-bottom: 25px;
+                    padding-bottom: @indent__m;
                 }
             }
 
@@ -271,51 +469,38 @@
         }
     }
 
+    .category__wrap_items {
+        .lib-vendor-prefix-flex-direction(column);
+        .lib-vendor-box-align(center);
+        padding: 0 @indent__sl;
+
+        .category__item {
+            width: 100%;
+            margin-bottom: @indent__sl;
+        }
+    }
+
     .november__sale {
-        padding: 50px 30px;
+        padding: ceil(2*@indent__m) @indent__l;
 
         .november_sale__text {
-            margin-bottom: 15px;
+            margin-bottom: @indent__sl;
         }
     }
-}
 
-.shop_by_brands {
-    margin: 0 15px;
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item {
+                flex: 0 0 50%;
+                margin-bottom: @indent__m;
 
-    .shop_by_brands__text {
-        overflow: hidden;
-        margin-top: 40px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .shop_by_brands__title {
-        text-transform: capitalize;
-        font-weight: 400;
-        padding: 0 5px;
-        position: relative;
-        display: inline-block;
-
-        &:before,
-        &::after {
-            content: "";
-            width: 200%;
-            position: absolute;
-            top: 50%;
-            border-top: 1px solid #ebebeb;
-        }
-
-        &:before {
-            left: 100%;
-        }
-
-        &::after {
-            right: 100%;
+            }
         }
     }
+
 
     .shop_by_brands__items {
+<<<<<<< HEAD
         .lib-list-reset-styles();
         .lib-vendor-prefix-display(flex);
         justify-content: center;
@@ -336,48 +521,42 @@
                     color: #888888;
                 }
             }
+=======
+
+
+        .shop_by_brands__item {
+            flex: 0 0 50%;
+>>>>>>> task8
         }
     }
 }
 
+
+
 // -------------
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
-    .container {
-        max-width: 750px;
+
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item {
+                flex: 0 0 50%;
+                margin-bottom: @indent__m;
+            }
+        }
+    }
+
+    .shop_by_brands__items {
+
+
+        .shop_by_brands__item {
+            flex: 0 0 33.33%;
+        }
     }
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l ) {
     .container {
         max-width: 970px;
-    }
-
-    .category__wrap_items {
-
-        .category__item {
-            .lib-vendor-prefix-flex-direction(row);
-
-            .categorie__text {
-                text-align: left;
-                padding: 15px 20px 0;
-
-                .categorie__subtitle {
-                    margin-bottom: 30px;
-                    padding-right: 10px;
-
-                }
-            }
-
-            .categorie__pic {
-                width: 50%;
-                padding-left: 20px;
-                padding-bottom: 0;
-
-                img {
-                    max-width: 100%;
-                }
-            }
-        }
     }
 
     .banner__wrapper {
@@ -390,14 +569,65 @@
         }
     }
 
+    .category__wrap_items {
+
+        .category__item {
+            .lib-vendor-prefix-flex-direction(row);
+
+            .categorie__text {
+                text-align: left;
+                padding: @indent__sl @indent__base 0;
+
+                .categorie__subtitle {
+                    margin-bottom: @indent__l;
+                    padding-right: @indent__s;
+
+                }
+            }
+
+            .categorie__pic {
+                width: 50%;
+                padding-left: @indent__base;
+                padding-bottom: 0;
+                height: 100%;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
     .november__sale {
         .lib-vendor-prefix-flex-direction(row);
+
+
+<<<<<<< HEAD
+    .november__sale {
+        .lib-vendor-prefix-flex-direction(row);
+=======
+>>>>>>> task8
 
         .november_sale__text {
             text-align: left;
             margin-bottom: 0;
         }
 
+    }
+
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item {
+                flex: 0 0 33.33%
+            }
+        }
+    }
+
+    .shop_by_brands__items {
+
+        .shop_by_brands__item {
+            flex: 0 0 20%;
+        }
     }
 }
 

@@ -12,10 +12,9 @@
         </referenceBlock>
 
         <!-- <referenceBlock name="catalog-search-advanced-link" remove="true" /> -->
-        <referenceBlock name="footer_links">
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true"/>
 
-        </referenceBlock>
-
-        <move element="form.subscribe" destination="footer-container" before="-"/>
+        <move element="form.subscribe" destination="footer-container" before="-" />
     </body>
 </page>

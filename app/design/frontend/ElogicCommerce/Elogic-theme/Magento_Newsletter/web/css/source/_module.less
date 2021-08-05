@@ -1,36 +1,37 @@
-.block.newsletter {
-    margin: 0 15px;
-    padding: 30px 0;
-    .lib-vendor-prefix-display(flex);
-    justify-content: space-between;
-    .lib-css(background, @color-elogig-bg);
+& when (@media-common =true) {
+ 
+    .newsletter__bg {
+        .lib-css(background, @color-elogig-bg);
+    }
 
-    .newsletter_wrap__text{
-        .title{
-            margin: 0;
-            letter-spacing: 2px;
-            .lib-font-size(30);
-            line-height: normal;
-        }
-    }
-    .content{
-        align-self: center;
-        flex: 0 0 50%;
-        .field.newsletter{
-            width: 100%;
-        }
-    }
-    .form {
+    .block.newsletter {
+        padding: @indent__l 0;
+        margin: 0 @indent__sl;
         .lib-vendor-prefix-display(flex);
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+    }
+
+    .newsletter_wrap__text {
+        .title {
+            .lib-font-size(30);
+            .lib-css(font-weight, @font-weight__semibold);
+            line-height: normal;
+            margin: 0;
+        }
+
+        .subtitle {
+            .lib-css(font-weight, @font-weight__light);
+        }
+    }
+
+    .content {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-box-align(center);
     }
 
     .control {
-        label{
-            display: flex;
-            justify-content: flex-end;
-        }
+        .lib-vendor-prefix-display(flex);
+
         .label {
             display: none;
         }
@@ -38,25 +39,34 @@
         input[type=email] {
             background: transparent;
             border: 1px solid #ddd;
-            height: 49px;
-            line-height: 49px;
-            color: #888;
-            padding-left: 20px;
-            display: inline-block;
+            height: 50px;
+            .lib-css(color, @color-elogic-gray-main);
+            padding-left: @indent__base;
             width: 50%;
         }
-    }
 
-    .actions {
-        .subscribe {
-            .lib-css(background, @color-elogic-black);
-            padding: 17px 35px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            border-radius: 0;
+        .actions {
+            .action.subscribe {
+                .lib-css(background, @color-elogic-black);
+                padding: 17px 35px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: none;
+                border-radius: 0;
+                .lib-css(font-weight,@font-weight__regular);
+            }
         }
-    }
 
+    }
 
 }
+
+//
+//  Mobile
+//  _____________________________________________
+
+
+
+//
+//  Desctop
+//  _____________________________________________

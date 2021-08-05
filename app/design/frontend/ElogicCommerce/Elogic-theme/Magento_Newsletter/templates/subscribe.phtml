@@ -6,42 +6,45 @@
 
 /** @var \Magento\Newsletter\Block\Subscribe $block */
 ?>
-<div class="container">
-    <div class="block newsletter">
-        <div class="newsletter_wrap__text">
-            <h2 class="title"><?= $block->escapeHtml(__('keep updated')) ?></h2>
-            <p class="subtitle"><?= $block->escapeHtml(__('Sign up for our newletter to recevie updates an exlusive offers')) ?></p>
-        </div>
-        <div class="content">
-            <form class="form subscribe"
-                novalidate
-                action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
-                method="post"
-                data-mage-init='{"validation": {"errorClass": "mage-error"}}'
-                id="newsletter-validate-detail">
-                <div class="field newsletter">
-                    <div class="control">
-                        <label for="newsletter">
-                            <span class="label">
-                                <?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?>
-                            </span>
-                            <input name="email" type="email" id="newsletter"
-                                placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>"
-                                data-mage-init='{"mage/trim-input":{}}'
-                                data-validate="{required:true, 'validate-email':true}"
-                            />
-                        </label>
+<div class="newsletter__bg">
+    <div class="container">
+        <div class="block newsletter">
+            <div class="newsletter_wrap__text">
+                <h2 class="title"><?= $block->escapeHtml(__('keep updated')) ?></h2>
+                <p class="subtitle"><?= $block->escapeHtml(__('Sign up for our newletter to recevie updates an exlusive offers')) ?></p>
+            </div>
+            <div class="content">
+                <form class="form subscribe"
+                    novalidate
+                    action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                    method="post"
+                    data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                    id="newsletter-validate-detail">
+                    <div class="field newsletter">
+                        <div class="control">
+                            <label for="newsletter">
+                                <span class="label">
+                                    <?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?>
+                                </span>
+                                </label>
+                                <input name="email" type="email" id="newsletter"
+                                    placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>"
+                                    data-mage-init='{"mage/trim-input":{}}'
+                                    data-validate="{required:true, 'validate-email':true}"
+                                />
+                                <div class="actions">
+                                    <button class="action subscribe primary"
+                                        title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>"
+                                        type="submit"
+                                        aria-label="Subscribe">
+                                        <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+                                    </button>
+                                </div>
+                        </div>
                     </div>
-                </div>
-                <div class="actions">
-                    <button class="action subscribe primary"
-                            title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>"
-                            type="submit"
-                            aria-label="Subscribe">
-                        <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
-                    </button>
-                </div>
-            </form>
+
+                </form>
+            </div>
         </div>
     </div>
 </div>
