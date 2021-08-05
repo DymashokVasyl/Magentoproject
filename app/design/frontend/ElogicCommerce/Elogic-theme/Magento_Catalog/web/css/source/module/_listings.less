@@ -178,10 +178,6 @@
             }
         }
 
-        .product-item-info {
-            margin: 0 ceil(@indent__s + @indent__xs);
-        }
-
         .product-item-details {
             margin: @indent__l 0 0;
             overflow: hidden;
@@ -226,6 +222,13 @@
             display: none;
         }
     }
+
+    .our_products__catalog__list{
+        .product-item-info {
+            margin: 0 ceil(@indent__s + @indent__xs);
+        }
+    }
+
 }
 
 // //
@@ -238,13 +241,26 @@
             .product-item {
                 flex: 0 0 100%;
             }
-
             .product-item-details {
                 margin: @indent__base 0 0;
             }
         }
     }
 }
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    #our_catalog__list {
+        .product-items {
+            .product-item {
+                flex: 0 0 100%;
+            }
+            .product-item-details {
+                margin: @indent__base 0 0;
+            }
+        }
+    }
+}
+
 
 //
 //  Desktop
