@@ -40,6 +40,7 @@
 
         .product-photo {
             position: relative;
+
             .product-item-front-photo {
                 opacity: 1;
                 z-index: 1;
@@ -142,7 +143,7 @@
                     line-height: 43px;
                     height: 43px;
                     width: 60px;
-                    .lib-css(font-size,@font-size__elogic__sl);
+                    .lib-css(font-size, @font-size__elogic__sl);
                     .lib-css(color, @color-elogic-black);
                     text-align: center;
 
@@ -189,9 +190,9 @@
         }
     }
 
-    #our_catalog__list{
-        .product-item-info{
-            &:hover{
+    #our_catalog__list {
+        .product-item-info {
+            &:hover {
 
                 ul.add-to-links {
                     opacity: 1;
@@ -199,7 +200,7 @@
                     transform: translateY(0);
                     transition: all .4s ease;
                 }
-    
+
                 .price-box {
                     opacity: 0;
                     visibility: hidden;
@@ -207,7 +208,7 @@
                     transform: translateX(60px);
                     transition: all .2s ease;
                 }
-    
+
                 .actions-primary {
                     opacity: 1;
                     visibility: visible;
@@ -245,14 +246,14 @@
         }
     }
 
-    #group__product{
+    #group__product {
         .lib-vendor-prefix-display(flex);
         .lib-vendor-prefix-flex-wrap(wrap);
 
-        .group_product__item{
+        .group_product__item {
             flex: 0 0 50%;
 
-            .widget{
+            .widget {
                 margin: 0 15px;
             }
         }
@@ -268,11 +269,11 @@
             letter-spacing: 1px;
 
             strong {
-                .lib-css(font-weight,@font-weight__semibold)
+                .lib-css(font-weight, @font-weight__semibold)
             }
         }
 
-        .product-items{
+        .product-items {
             .lib-list-reset-styles();
 
         }
@@ -329,6 +330,7 @@
 
     }
 }
+
 //
 //  Desktop
 //  _____________________________________________
@@ -345,7 +347,7 @@
 
     #group__product {
 
-        .group_product__item{
+        .group_product__item {
             flex: 0 0 33.33%;
         }
 
