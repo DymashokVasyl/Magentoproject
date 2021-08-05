@@ -134,7 +134,6 @@
 
             .our_products__title {
                 .lib-font-size(@font-size__elogic__ls);
-                padding: 0;
             }
 
             .our_products__subtitle {
@@ -193,11 +192,113 @@
         }
 
     }
+
+    .news_blog__wrap {
+        margin: 0 @indent__sl;
+
+        .news_blog__heading {
+            margin-top: ceil(@indent__xl + @indent__l);
+            margin-bottom: @indent__l;
+            padding-bottom: @indent__base;
+            position: relative;
+
+            .news_blog__title {
+                .lib-font-size(@font-size__elogic__ls);
+            }
+
+            .news_blog__subtitle {
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding-bottom: @indent__xs;
+            }
+
+            &::after {
+                content: "";
+                width: 30px;
+                height: 3px;
+                .lib-css(background, @color-elogic-black);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        .news_blog__items {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            margin: 0 -@indent__sl;
+
+        }
+
+        .blog_item__content {
+            margin: 0 @indent__sl;
+
+        }
+
+        .blog_item__title {
+            .title {
+                margin: @indent__m 0 0;
+                padding-bottom: @indent__sl;
+                .lib-font-size(@font-size__base);
+                text-transform: uppercase;
+
+                a {
+                    .lib-css(color, @color-elogic-black);
+                    line-height: @line-height__l;
+                }
+
+            }
+        }
+
+        .blog_item_time {
+            .lib-css(color, @color-elogic-gray-main);
+
+            i {
+                display: inline-block;
+                .lib-font-size(15);
+                margin-right: @indent__xs;
+                margin-top: 2px;
+            }
+        }
+
+        .date__wrap {
+            display: inline-block;
+            .lib-css(color, @color-elogic-gray-main);
+            .lib-font-size(13);
+            .lib-css(font-style, @font-style__emphasis);
+        }
+
+        .blog_item_short__desc {
+            letter-spacing: .25px;
+            margin-top: @indent__sl;
+            line-height: @line-height__l;
+            .lib-css(font-weight,@font-weight__light);
+
+            p {
+                .lib-css(color, @color-elogic-gray-main);
+            }
+
+
+        }
+    }
+
+
 }
 
 //
 //  Mobile
 //  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item{
+                flex: 0 0 100%
+            }
+        }
+    }
+
+}
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
     h2.title {
@@ -263,11 +364,33 @@
             margin-bottom: @indent__sl;
         }
     }
+
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item{
+                flex: 0 0 50%;
+                margin-bottom: @indent__m;
+                
+            }
+        }
+    }
 }
 
 //
 //  Desktop
 //  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item{
+                flex: 0 0 50%;
+                margin-bottom: @indent__m;
+            }
+        }
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l ) {
     .container {
@@ -326,13 +449,21 @@
     .november__sale {
         .lib-vendor-prefix-flex-direction(row);
 
-        
+
 
         .november_sale__text {
             text-align: left;
             margin-bottom: 0;
         }
 
+    }
+
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item{
+                flex: 0 0 33.33%
+            }
+        }
     }
 }
 
