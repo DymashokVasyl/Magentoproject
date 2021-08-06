@@ -408,7 +408,7 @@
 
     // p.subtitle,
     a.link {
-        .lib-font-size(@font-size__elogic__s);
+        .lib-font-size(@font-size__s);
     }
 
     .category__wrap_items {
@@ -519,6 +519,9 @@
 
 // -------------
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .container {
+        max-width: 750px;
+    }
 
     .news_blog__wrap {
         .news_blog__items {
