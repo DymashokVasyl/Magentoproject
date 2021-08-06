@@ -1,0 +1,286 @@
+// Common
+// ---------------------------------------------
+
+& when (@media-common =true) {
+    .cms-home.cms-index-index.page-layout-1column {
+        .page-wrapper>main.page-main {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-sections {
+            margin: 0;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        padding: 0;
+        margin: 0;
+        color: @color-elogic-black;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    h2.title {
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        .lib-font-size(@font-size__elogic__xl);
+        .lib-css(color, @color-elogic-black);
+        .lib-css(font-weight, @font-weight__bold)
+    }
+
+    h2.title span {
+        .lib-css(font-weight, @font-weight__regular)
+    }
+
+    p.subtitle {
+        .lib-css(color, @color-elogic-gray-main);
+    }
+
+    a.link {
+        text-transform: uppercase;
+        text-decoration: none;
+        .lib-css(color, @color-elogic-black);
+        border-bottom: 1px solid @color-elogic-black;
+        padding-bottom: @indent__xs;
+        -webkit-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .banner__wrapper {
+        .lib-css(background-color, @color-elogig-bg);
+        .lib-vendor-prefix-display(flex);
+        justify-content: center;
+        padding: ceil(@indent__base + @indent__xl) @indent__xl ceil((@indent__m*4) + @indent__s);
+
+        .banner__body {
+            .lib-vendor-prefix-display(flex);
+
+            div {
+                flex: 0 0 50%;
+            }
+
+            .banner__text {
+                align-self: center;
+
+                .subtitle {
+                    .lib-css(color, @color-elogic-gray-main);
+                    padding-bottom: 10%;
+                }
+            }
+
+            .banner__pic>img {
+                max-width: 75%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .category__wrap_items {
+        .lib-vendor-prefix-display(flex);
+
+        .category__item {
+            .lib-css(background-color, @color-elogig-bg);
+            width: 50%;
+            margin: 0 ceil(@indent__s + @indent__xs);
+            padding-bottom: @indent__l;
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(column);
+
+            .categorie__text {
+                align-self: center;
+                padding: 0 ceil(@indent__m*2);
+                text-align: center;
+
+                .categorie__subtitle {
+                    margin-bottom: ceil(@indent__s + @indent__xs);
+                    .lib-css(font-style, @font-style__emphasis);
+                }
+            }
+
+            .categorie__pic {
+                width: 100%;
+                height: 60%;
+                padding-left: 0;
+                padding-bottom: ceil(@indent__s + @indent__xs);
+                
+                img {
+                    max-width: 70%;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+
+        }
+    }
+}
+
+.our_products__wrap {
+    .our_products__text {
+        padding-bottom: @indent__base;
+        margin: @indent__l ceil(@indent__s + @indent__xs);
+        position: relative;
+
+        .our_products__title {
+            .lib-font-size(@font-size__elogic__ls);
+            padding: 0;
+        }
+
+        .our_products__subtitle {
+            text-transform: uppercase;
+            padding-bottom: @indent__xs;
+            letter-spacing: 1px
+        }
+
+        &::after {
+            content: "";
+            width: 30px;
+            height: 3px;
+            .lib-css(background, @color-elogic-black);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
+    h2.title {
+        .lib-font-size(@font-size__elogic__l);
+    }
+
+    // p.subtitle,
+    a.link {
+        .lib-font-size(@font-size__s);
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .container {
+        max-width: 100%;
+    }
+
+    h2.title {
+        .lib-font-size(@font-size__elogic__l);
+    }
+
+    .banner__wrapper {
+        padding: @indent__m @indent__base ceil(@indent__base + @indent__m);
+
+        .banner__body {
+            .lib-vendor-prefix-flex-direction(column);
+
+            div {
+                flex: 0 0 100%;
+            }
+
+            .banner__text {
+                text-align: center;
+                margin-bottom: @indent__m;
+
+                .subtitle {
+                    padding-bottom: @indent__m;
+                }
+            }
+
+            .banner__pic img {
+                max-width: 55%;
+            }
+        }
+    }
+
+    .category__wrap_items {
+        .lib-vendor-prefix-flex-direction(column);
+        .lib-vendor-box-align(center);
+        padding: 0 ceil(@indent__s + @indent__xs);
+
+        .category__item {
+            width: 100%;
+            margin-bottom: ceil(@indent__s + @indent__xs);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l ) {
+    .container {
+        max-width: 970px;
+    }
+
+    .banner__wrapper {
+
+        .banner__body {
+
+            .banner__pic img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .category__wrap_items {
+
+        .category__item {
+            .lib-vendor-prefix-flex-direction(row);
+
+            .categorie__text {
+                text-align: left;
+                padding: ceil(@indent__s + @indent__xs) @indent__base 0;
+
+                .categorie__subtitle {
+                    margin-bottom: @indent__l;
+                    padding-right: @indent__s;
+
+                }
+            }
+
+            .categorie__pic {
+                width: 50%;
+                padding-left: @indent__base;
+                padding-bottom: 0;
+                height: 100%;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl ) {
+    .container {
+        max-width: 1350px;
+    }
+
+    .banner__wrapper {
+
+        .banner__body {
+
+            .banner__pic img {
+                max-width: 100%;
+            }
+        }
+    }
+}

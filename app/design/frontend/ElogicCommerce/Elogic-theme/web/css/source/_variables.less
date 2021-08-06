@@ -7,10 +7,16 @@
 @font-family-name__poppins: 'Poppins';
 @font-family-name__oswald: 'Oswald';
 
-
-
 @font-family-name__base: 'Open Sans';
 @font-family__base: @font-family-name__poppins, @font-family-name__base, @font-family__sans-serif;
+
+// Font sizes
+
+@font-size__elogic__xs: floor(.75 * @font-size__base); // 11px
+@font-size__elogic__sl: ceil(1.15 * @font-size__base); // 16px
+@font-size__elogic__ls: ceil(1.7 * @font-size__base); // 24px
+@font-size__elogic__l: ceil(1.85 * @font-size__base); // 26px
+@font-size__elogic__xl: ceil(2.55 * @font-size__base); // 36px
 
 // Color Pool
 @color-elogic-black: #222;
@@ -20,12 +26,20 @@
 @color-elogic-gray-discount: #555;
 @color-elogic-gray: #777;
 @color-elogic-white: #fff;
+@color-elogig-bg:#f3f3f3;
 
 
 
 
 //  Colors nesting
 @page__background-color: @color-white;
+
+
+// New Responsive variables
+@screen__l:992px;
+@screen__lg:1024;
+@screen__xl:1200px; 
+@screen__xxl: 1440px;
 
 //
 //  Icons
