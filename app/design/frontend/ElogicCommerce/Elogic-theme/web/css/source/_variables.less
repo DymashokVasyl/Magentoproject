@@ -13,7 +13,9 @@
 // Font sizes
 
 @font-size__elogic__xs: floor(.75 * @font-size__base); // 11px
+@font-size__elogic__s:  ceil(.85 * @font-size__base); // 12
 @font-size__elogic__sl: ceil(1.15 * @font-size__base); // 16px
+@font-size__elogic__sxl: ceil(1.25 * @font-size__base); // 18px
 @font-size__elogic__ls: ceil(1.7 * @font-size__base); // 24px
 @font-size__elogic__l: ceil(1.85 * @font-size__base); // 26px
 @font-size__elogic__xl: ceil(2.55 * @font-size__base); // 36px
@@ -33,13 +35,20 @@
 
 //  Colors nesting
 @page__background-color: @color-white;
-
+@banner__background-image: linear-gradient(to right, rgba(136,136,136,0.15) 0%,rgba(144,144,144,0.15) 5%,rgba(243,243,243,0.43) 70%,rgba(190,190,190,0.5) 85%,rgba(136,136,136,0.5) 100%), url('@{baseDir}images/background-img.png');
 
 // New Responsive variables
 @screen__l:992px;
 @screen__lg:1024;
 @screen__xl:1200px; 
 @screen__xxl: 1440px;
+
+//
+//  Indents
+//  ---------------------------------------------
+
+@indent__base: @line-height__computed; // 20px
+@indent__sl: @indent__base - 5; // 15px
 
 //
 //  Icons
