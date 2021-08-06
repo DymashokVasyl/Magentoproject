@@ -11,9 +11,18 @@
             </arguments>
         </referenceBlock>
 
-        <!-- <referenceBlock name="catalog-search-advanced-link" remove="true" /> -->
+
+        <referenceContainer name="footer-container">
+                <block class="Magento\Cms\Block\Block" name="footer_links_block-elogic">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_block-elogic</argument>
+                </arguments>
+                    
+            </block>
+        </referenceContainer>
+
         <referenceBlock name="footer_links" remove="true" />
-        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="copyright" remove="true" />
 
         <move element="form.subscribe" destination="footer-container" before="-" />
     </body>
