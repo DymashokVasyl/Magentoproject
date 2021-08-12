@@ -1,0 +1,140 @@
+& when (@media-common = true) {
+    .block-search{
+        max-width: max-content;
+        width: 100%;
+        position: relative;
+    }
+    // .block-search{
+    //     input{
+
+    //     }
+    // }
+
+    .form.minisearch{
+        // display: none;
+        height: 43px;
+        line-height: 43px;
+        display: none;
+        position: absolute;
+        top: 175%;
+        right: 0;
+        z-index: 1000;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        text-align: left;
+        list-style: none;
+        .lib-css(background-color,@color-elogic-black);
+        left: auto;
+        border: 1px solid rgba(210,210,210,.175);
+    }
+
+    .field.search{
+        height: 100%;
+        position: relative;
+
+        .control{
+            display: block;
+        }
+    }
+    // .block-search input
+
+    .block-search{
+        .minisearch{
+            .action.search{
+                .lib-css(background-color,@color-elogic-black);
+                padding: 0 @indent__base;
+                right: 0;
+
+                &:hover{
+                    .lib-css(background-color,#080808);
+
+                    &:before{
+                    .lib-css(color,@color-elogic-white);
+
+                    }
+                }
+                &::before{
+                    vertical-align: middle;
+                    .lib-css(color,@color-elogic-white);
+                }
+            }
+            input{
+                .lib-list-reset-styles();
+                left:0;
+                top: 0;
+
+                &:hover,
+                &:focus,
+                &:active{
+                    outline:none;
+                }
+            }
+
+            input[type=text]{
+                .lib-input-placeholder(@color-elogic-white);
+                border: none;
+                background: transparent;
+                padding: 0 @indent__xl 0 @indent__m;
+                .lib-css(color, @color-elogic-white)
+        
+            }
+            
+        }
+
+        .block-search {
+            .label.active + .control input {
+                position: relative;
+            }
+        }
+
+    }
+
+
+
+}
+
+
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s){
+    .form.minisearch{
+        min-width: 270px;
+    }
+} 
+
+.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    
+    .block-search{
+        margin-top: 0;
+        margin-left: 16px;
+    }
+
+    .form.minisearch{
+        min-width: 370px;
+    } 
+
+    input[type=text]{
+        width: 100%;
+    }
+
+}
+
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .form.minisearch{
+        min-width: 370px;
+    } 
+    input[type=text]{
+        height: 35px;
+        line-height: 35px;
+
+    }
+}
