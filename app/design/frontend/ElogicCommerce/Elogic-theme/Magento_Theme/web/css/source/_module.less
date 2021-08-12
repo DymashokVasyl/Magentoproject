@@ -68,12 +68,28 @@
         width: 100%;
         margin: 0 auto;
 
+
         .header.content {
             width: 100%;
             max-width: 100%;
             padding: 0 15px;
             margin: 0;
             .lib-vendor-prefix-flex-wrap(wrap);
+
+            &.fixed {
+                box-shadow: 0 0 5px 0 @color-elogic-gray-dark;
+                background: rgba(255, 255, 255, .95);
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 9999;
+                width: 100%;
+                padding: 0 @indent__xl;
+
+                .menu_wrap {
+                    padding: 0;
+                }
+            }
 
             .menu_wrap {
                 padding: @indent__base 0;
@@ -94,6 +110,8 @@
             .lib-list-reset-styles();
             .lib-vendor-prefix-display(flex);
             .lib-vendor-box-align(center);
+            .lib-font-size(@font-size__elogic__s);
+
 
             li {
                 .lib-list-reset-styles();
@@ -105,7 +123,6 @@
         .link {
 
             text-transform: uppercase;
-            .lib-font-size(@font-size__elogic__s);
             letter-spacing: 1px;
             position: relative;
 
@@ -120,7 +137,7 @@
 
         }
 
-        .link.authorization-link{
+        .link.authorization-link {
             order: -1;
         }
 
@@ -146,10 +163,10 @@
         .lib-css(font-weight, @font-weight__light);
         .lib-vendor-prefix-flex-wrap(wrap);
 
-        a{
+        a {
             text-decoration: none;
 
-            h2{
+            h2 {
                 padding-bottom: 0;
                 letter-spacing: 1px;
                 text-transform: uppercase;
@@ -157,9 +174,10 @@
                 line-height: 1;
                 .lib-css(color, @color-elogic-black);
                 .lib-font-size(@font-size__elogic__sl);
+
                 &:hover {
-                    
-                        .lib-css(color, @color-elogic-gray-main);
+
+                    .lib-css(color, @color-elogic-gray-main);
                 }
             }
         }
@@ -351,7 +369,7 @@
             .action_wrap {
                 width: 100%;
 
-                .header.links{
+                .header.links {
                     margin-right: @indent__sl;
                 }
 
@@ -481,6 +499,10 @@
 
     .page-header {
         .header.content {
+            &.fixed {
+                padding: 0;
+            }
+
             .logo_wrap {
                 width: auto;
                 max-width: 100%;
@@ -502,6 +524,10 @@
 
             .action_wrap {
                 flex: 0 0 40%;
+
+                .header.links {
+                    padding-right: @indent__base;
+                }
             }
         }
     }
@@ -552,6 +578,10 @@
         .header.content {
             .lib-vendor-prefix-flex-direction(row);
 
+            &.fixed {
+                padding: 0 @indent__xl;
+            }
+
             .logo_wrap {
                 flex: 0 0 20%;
                 padding-top: 0;
@@ -568,6 +598,10 @@
 
             .action_wrap {
                 flex: 0 0 25%;
+
+                .header.links {
+                    padding-right: 0;
+                }
             }
         }
     }

@@ -21,88 +21,135 @@
 
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+
+    .nav-open {
+        .page-header {
+            .action.nav-toggle {
+                z-index: 100;
+                top: 0;
+                left: 0;
+                &::before {
+                    .lib-css(content, @icon-elogic-close);
+                    .lib-css(font-family,@font-family-awesome);
+                    .lib-css(font-weight,@font-weight-icons);
+                    .lib-css(color,@color-elogic-white);
+                }
+
+                &::after {
+                    background: transparent;
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+
     .nav-sections-item-title {
         display: none;
     }
-    .nav-open{
+
+    .nav-open {
         .sections.nav-sections {
             max-width: 100%;
             width: 100%;
             .lib-css(background, @color-elogic-black)
         }
+
+
     }
 
     .menu_wrap {
-        .sections.nav-sections{
-            .ves-megamenu{
-                >.navigation{
+        .sections.nav-sections {
+            .ves-megamenu {
+                >.navigation {
+
                     .level0.active,
                     .level0.has-active {
-                        >a{
-                            span{
+                        >a {
+                            span {
                                 margin: 0;
                             }
                         }
-                    } 
+                    }
+
+                    .submenu{
+                        overflow-y: hidden;
+                    }
                 }
             }
         }
-        
         .section-items {
             padding: 0 @indent__base;
         }
+
         .ves-megamenu {
             >.navigation {
 
-                a{
-                    .lib-css(color,@color-elogic-gray-secondary);
 
-                    &:hover{
-                        .lib-css(color,@color-elogic-gray-main);
+                a {
+                    .lib-css(color, @color-elogic-gray-secondary);
+
+                    &:hover {
+                        .lib-css(color, @color-elogic-gray-main);
                     }
                 }
+
                 background: transparent;
-                .nav-item{
-                    text-transform: uppercase;
-                }
-                .level0.nav-item{
+
+
+
+                .level0.nav-item {
                     border: none;
-                    >a{
+
+                    >a {
                         .lib-list-reset-styles();
                         // .lib-css(color,@color-elogic-gray-secondary);
-                        border:none;
+                        border: none;
                         border-bottom: 1px solid @color-elogic-gray-dark;
                         padding: 14px @indent__base;
                         background: transparent;
                         line-height: initial;
                         letter-spacing: 1px;
-                        .lib-font-size(@font-size__base)
+
+                        span{
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    a{
+                        .lib-font-size(@font-size__base);
 
                     }
+
+
                 }
 
-                .opener{
+                .opener {
                     top: 50%;
                     transform: translateY(-50%);
                 }
 
             }
-            .opener{
+
+            .opener {
 
                 // .lib-icon-font(
                 //     @_icon-font-content:@icon-elogic-angle-down;
                 //     @_icon-font:@font-family-awesome;
                 //     @_icon-font-size:15px;
                 // )
-                &::before{
+                &::before {
                     content: @icon-elogic-angle-down;
-                    .lib-css(font-family,@font-family-awesome);
-                    .lib-css(font-weight,@font-weight-icons);
+                    .lib-css(font-family, @font-family-awesome);
+                    .lib-css(font-weight, @font-weight-icons);
                 }
             }
-            .opener.item-active{
-                background-color:transparent;
-                &::before{
+
+            .opener.item-active {
+                background-color: transparent;
+
+                &::before {
                     content: @icon-elogic-angle-right;
                 }
             }
@@ -126,8 +173,17 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
 
+    .menu_wrap {
+        .ves-megamenu {
+            .navigation {
+                padding: 0;
+            }
+        }
+    }
+
     .ves-megamenu {
         .navigation {
+
             ul {
                 .level0.current {
                     >a {
@@ -329,7 +385,7 @@
             }
 
             p {
-                .lib-css(color,@color-elogic-gray);
+                .lib-css(color, @color-elogic-gray);
                 .lib-font-size(12px);
 
             }
@@ -411,7 +467,7 @@
 
                     width: 768px;
                     left: 0px;
-                    
+
                 }
             }
         }
