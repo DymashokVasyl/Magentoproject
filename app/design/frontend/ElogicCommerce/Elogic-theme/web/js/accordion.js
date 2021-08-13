@@ -2,29 +2,53 @@ define([
     'jquery',
     'matchMedia',
     'jquery/ui',
-    'accordion',
+    'collapsible',
     'domReady!'
 ], function ($, mediaCheck) {
     'use strict';
 
     $.widget('elogic.accordion', {
         options: {
-            template:"",
-            acordionOptions:{
-                openedState: "open"
+            collapsibleOptions:{
+                animate: {
+                    easing: "easeOutCubic",
+                    duration:"300"
+                },
+
+
             },
         },
 
 
-        _create: function () { 
+        _create: function () {
+            var self = this,
+                options = this.options,
+                el = $(this.element);
+
+                
+            el.collapsible(options.collapsibleOptions);
+
+
             mediaCheck({
                 media: '(min-width: 767px)',
-                entry: function () {},
-                exit: function () {
-                    console.log(this.options.template);
+                entry: function () {
 
-                    $(this.options.template).accordion(this.options.acordionOptions);
-                }.bind(this),
+                    el.each(function() {
+                        $(this).collapsible();
+                        $(this).collapsible("deactivate");
+
+
+                    });
+                },
+                exit: function () {
+                    
+                    el.each(function() {
+                        $(this).collapsible();
+
+                        $(this).collapsible("activate");
+                    });
+
+                },
             });
         },
     });

@@ -1,16 +1,14 @@
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 define([
     'jquery',
     'domReady!'
 ], function ($) {
     'use strict';
 
-    const backTop = $('#back__top');
-    const header = $('.header.content')
+    var backTop = $('#back__top'),
+        header = $('.header.content');
+
+
+    let scrolledBool = true;
 
         $(window).scroll(function () {
             // Header Sticky
@@ -24,11 +22,13 @@ define([
 
 
             // Back To Top
-            if ($(this).scrollTop() > 100) {
+            if ($(this).scrollTop() > 100 & scrolledBool) {
+                scrolledBool = false;
                 backTop.fadeIn();
 
             }
-            if ($(this).scrollTop() < 100 ) {
+            if ($(this).scrollTop() < 100 & !scrolledBool) {
+                scrolledBool = true;
                 backTop.fadeOut();
 
             }
