@@ -18,6 +18,7 @@ define([
 
             },
         },
+    
 
 
         _create: function () {
@@ -26,7 +27,11 @@ define([
                 el = $(this.element);
 
                 
-            el.collapsible(options.collapsibleOptions);
+            // el.collapsible(options.collapsibleOptions);
+            el.each(function() {
+                $(this).collapsible();
+
+            });
 
 
             mediaCheck({
@@ -34,16 +39,14 @@ define([
                 entry: function () {
 
                     el.each(function() {
-                        $(this).collapsible();
                         $(this).collapsible("deactivate");
-
 
                     });
                 },
                 exit: function () {
                     
                     el.each(function() {
-                        $(this).collapsible();
+                        // $(this).collapsible(options.collapsibleOptions);
 
                         $(this).collapsible("activate");
                     });
