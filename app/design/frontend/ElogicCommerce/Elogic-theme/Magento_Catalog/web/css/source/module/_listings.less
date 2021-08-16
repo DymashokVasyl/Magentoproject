@@ -25,6 +25,79 @@
 
 & when (@media-common =true) {
 
+    .catalog-category-view {
+        .toolbar-sorter {
+            .sorter-label {
+                position: absolute;
+                right: 25px;
+                width: auto;
+                .lib-css(color, @color-elogic-gray-main);
+                .lib-css(font-weight, @font-weight__light);
+            }
+
+            .action.sorter-action.sort-asc {
+                &:before {
+                    content: @icon-elogic-angle-up;
+                    .lib-css(font-family, @font-family-awesome);
+                    .lib-css(font-weight, @font-weight-icons);
+                }
+            }
+
+
+            .action.sorter-action.sort-desc {
+                &:before {
+                    content: @icon-elogic-angle-down;
+                    .lib-css(font-family, @font-family-awesome);
+                    .lib-css(font-weight, @font-weight-icons);
+                }
+
+            }
+        }
+
+        .select2-container {
+            .select2-selection {
+                border: none;
+                background: transparent;
+
+                .select2-selection__rendered,
+                .select2-selection__arrow {
+                    display: none;
+                }
+            }
+
+        }
+
+        .select2-container--open {
+            .select2-dropdown {
+                border: 1px solid @color-elogic-black;
+                transition: .3s ease-in-out;
+                .select2-results__options {
+                    li{
+                        margin: 0;
+                    }
+                }
+
+                .select2-results__option--highlighted {
+                    color: @color-elogic-white ;
+                    background-color: @color-elogic-gray-dark;
+                }
+
+                .select2-results__option--selected {
+                    background: transparent;
+                }
+
+                .select2-results__option--selected{
+                    background-color: @color-elogic-gray-main;
+                }
+            }
+
+        }
+
+    }
+
+
+
+
     //  Product Lists
 
 
@@ -323,8 +396,10 @@
             }
         }
     }
+
     .group__product {
         .lib-vendor-prefix-flex-direction(column);
+
         .group_product__item {
             width: 100%;
         }
