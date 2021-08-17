@@ -43,10 +43,6 @@ use Magento\Framework\App\Action\Action;
                                 <?php
                                 $productImage = $block->getImage($_item, $image);
                                 $productImageSwitch = $_imageHelper->init($_item, $_imageSwitch);
-                                if ($pos != null) {
-                                $position = ' style="left:' . $productImage->getWidth() . 'px;'
-                                . 'top:' . $productImage->getHeight() . 'px;"';
-                                }
                                 ?>
                                 <?php // Product Image ?>
                                     <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo product-item-front-photo">
@@ -87,7 +83,7 @@ use Magento\Framework\App\Action\Action;
                                             </li>
                                         </ul>
                                         </div>
-                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
                             <div class="product-item-details">
                                 <strong class="product-item-name">

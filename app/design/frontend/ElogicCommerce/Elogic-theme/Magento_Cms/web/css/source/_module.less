@@ -32,9 +32,7 @@
         transition: all .4s ease;
     }
 
-    .container {
-        margin: 0 auto;
-    }
+
 
     h2.title {
         letter-spacing: 1.5px;
@@ -490,9 +488,7 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
-    .container {
-        max-width: 100%;
-    }
+
 
     h2.title {
         .lib-font-size(@font-size__elogic__l);
@@ -602,9 +598,7 @@
 
 // -------------
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
-    .container {
-        max-width: 750px;
-    }
+
 
     h2.title {
         .lib-font-size(@font-size__elogic__xl);
@@ -654,9 +648,6 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l ) {
-    .container {
-        max-width: 970px;
-    }
 
     .banner__item {
         padding: ceil(@indent__base + @indent__xl) 0 ceil((@indent__m*4) + @indent__s);
@@ -737,10 +728,6 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl ) {
-    .container {
-        max-width: 1350px;
-    }
-
     .banner__item {
         padding: ceil(@indent__base + @indent__xl) @indent__xl ceil((@indent__m*4) + @indent__s);
         .banner__body {

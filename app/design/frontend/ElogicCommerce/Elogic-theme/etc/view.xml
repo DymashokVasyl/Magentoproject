@@ -14,6 +14,18 @@
                 <height>794</height>
             </image>
 
+            <image id="category_page_grid" type="small_image">
+                <width>640</width>
+                <height>794</height>
+            </image>
+            <image id="category_page_grid-1" type="small_image">
+                <width>640</width>
+                <height>794</height>
+            </image>
+            <image id="category_page_list" type="small_image">
+                <width>640</width>
+                <height>794</height>
+            </image>
         </images>
     </media>
 </view>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+    <referenceContainer name="sidebar.main">
+        <block class="Magento\Framework\View\Element\Template" name="scripts.catalog" template="Magento_Catalog::js.phtml"/>
+        <block class="Magento\Cms\Block\Block" name="sidebar.main.baner" after="-">
+            <arguments>
+                <argument name="block_id" xsi:type="string">sidebar-main-baner</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+     <!-- <referenceContainer name="product_list_toolbar">
+         <container name="toolbar.side.left" as="toolbar.side.left" label="Toolbar Side Left" htmlTag="div" htmlClass="toolbar__side__left">
+         </container>
+     </referenceContainer> -->
+
+        <!-- Move -->
+       <move element="breadcrumbs" destination="columns.top" after="category.view.container"/>
+    </body>
+</page>
