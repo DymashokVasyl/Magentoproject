@@ -10,7 +10,7 @@
 
         <!-- <referenceBlock name="header.panel.wrapper" remove="true" /> -->
 
-
+        <referenceContainer name="header.container" htmlClass="page-header container" />
         <referenceContainer name="header-wrapper">
             <container name="logo.wrapper" as="logo-wrap" label="Logo Wrapper" htmlTag="div" htmlClass="logo_wrap" />
             <container name="menu.wrapper" as="menu-wrap" label="Menu Wrapper" htmlTag="div" htmlClass="menu_wrap" />
