@@ -9,7 +9,12 @@ define([
 
     $.widget('elogic.accordion', {
         options: {
+            selector: "",
             collapsibleOptions:{
+                active: [0],
+                collapsible: true,
+                openedState: 'active',
+                multiCollapsible: true,
                 animate: {
                     easing: "easeOutCubic",
                     duration:"300"
@@ -22,36 +27,20 @@ define([
 
 
         _create: function () {
-            var self = this,
-                options = this.options,
-                el = $(this.element);
-
-                
-            // el.collapsible(options.collapsibleOptions);
-            el.each(function() {
-                $(this).collapsible();
-
-            });
-
 
             mediaCheck({
                 media: '(min-width: 767px)',
                 entry: function () {
+                    $(this.options.selector).collapsible( "disable" );
+                    $(this.options.selector).collapsible( "destroy" );
 
-                    el.each(function() {
-                        $(this).collapsible("deactivate");
-
-                    });
-                },
+                }.bind(this),
                 exit: function () {
-                    
-                    el.each(function() {
-                        // $(this).collapsible(options.collapsibleOptions);
+                        console.log(`Collapsible init - ${this.options.selector}`);
+                        $(this.options.selector).collapsible(this.options.collapsibleOptions);
 
-                        $(this).collapsible("activate");
-                    });
 
-                },
+                }.bind(this),
             });
         },
     });

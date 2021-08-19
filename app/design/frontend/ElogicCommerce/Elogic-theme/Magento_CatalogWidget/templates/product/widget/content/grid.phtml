@@ -59,30 +59,21 @@ use Magento\Framework\App\Action\Action;
                                 <?php endif; ?>
                                 <?php if ($showWishlist || $showCompare) : ?>
                                     <div class="actions-secondary" data-role="add-to-links">
-                                        <ul class="add-to-links">
-                                            <li class="quickview-product">
-                                                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" title="<?= $block->escapeHtmlAttr(__('Quick view')) ?>">
-                                                <i class="far fa-eye"></i>
+                                        <div class="add-to-links">
+                                                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" title="<?= $block->escapeHtmlAttr(__('Quick view')) ?>" class="action quickviewproduct">
                                                 </a>
-                                            </li>
-                                            <li>                                                    
                                             <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist) : ?>
                                                 <a href="#"
                                                 data-post='<?= /* @noEscape */ $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
-                                                <i class="far fa-heart"></i>    
                                                 </a>
                                             <?php endif; ?>
-                                            </li>
-                                            <li>
                                             <?php if ($block->getAddToCompareUrl() && $showCompare) : ?>
                                             <?php $compareHelper = $this->helper(\Magento\Catalog\Helper\Product\Compare::class);?>
                                                 <a href="#" class="action tocompare" data-post='<?= /* @noEscape */ $compareHelper->getPostDataParams($_item) ?>' title="<?= $block->escapeHtmlAttr(__('Add to Compare')) ?>">
-                                                <i class="fas fa-balance-scale"></i>
                                                 </a>
                                             <?php endif; ?>
-                                            </li>
-                                        </ul>
                                         </div>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                             <div class="product-item-details">

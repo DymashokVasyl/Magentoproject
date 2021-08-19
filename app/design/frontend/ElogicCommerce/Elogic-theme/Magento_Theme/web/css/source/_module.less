@@ -75,26 +75,26 @@
         .top-container,
         .page-main {
             padding: 0;
-            max-width: 1350px;
+            // max-width: 1350px;
+            width: 100%;
         }
     }
 
-    .page-layout-2columns-left {
-        main{
-            .column.main{
-                width: 75%;
-                padding: 0 15px;
-            }
-            .sidebar-main,
-            .sidebar-additional{
-                width: 25%;
-                padding: 0 15px;
-            }
-        }
-
+    ol, ul, li{
+        .lib-list-reset-styles();
     }
 
-    
+    ul > li, ol > li{
+        margin: 0;
+        font-weight: @font-weight__light;
+    }
+
+    p{
+        margin: 0 0 10px;
+        line-height: 22px;
+        font-weight: @font-weight__light;
+    }
+
     .container {
         margin: 0 auto;
     }
@@ -108,11 +108,6 @@
     }
 
     .page-header {
-        max-width: 1350px;
-        width: 100%;
-        margin: 0 auto;
-
-
         .header.content {
             width: 100%;
             max-width: 100%;
@@ -121,22 +116,37 @@
             .lib-vendor-prefix-flex-wrap(wrap);
 
             &.fixed {
-                box-shadow: 0 0 5px 0 @color-elogic-gray-dark;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
                 background: rgba(255, 255, 255, .95);
                 position: fixed;
                 top: 0;
                 left: 0;
                 z-index: 9999;
                 width: 100%;
-                padding: 0 @indent__xl;
+                -webkit-animation-name: fadeInDown;
+                -webkit-animation-duration: 5s;
+                -webkit-animation-timing-function: linear;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-direction: normal;
+                -webkit-animation-play-state: running;
+                -webkit-animation-fill-mode: forwards;
+                -moz-animation-name: anim_titles;
+                -moz-animation-duration: 5s;
+                -moz-animation-timing-function: linear;
+                -moz-animation-iteration-count: infinite;
+                -moz-animation-direction: normal;
+                -moz-animation-play-state: running;
+                -moz-animation-fill-mode: forwards;
+                -webkit-animation-delay: 1s;
+                -moz-animation-delay: 1s;
+                -webkit-animation-iteration-count: 1;
+                -moz-animation-iteration-count: 1;
+                -webkit-animation-duration: .7s;
+                -moz-animation-duration: .7s;
+                -webkit-animation-delay: 0s;
+                -moz-animation-delay: 0s;
+                -webkit-animation-timing-function: ease-out;
 
-                .menu_wrap {
-                    padding: 0;
-                }
-            }
-
-            .menu_wrap {
-                padding: @indent__base 0;
             }
         }
     }
@@ -386,6 +396,21 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
+    .page-layout-2columns-left {
+        main{
+            .column.main{
+                width: 100%;
+                padding: 0 15px;
+            }
+            .sidebar-main,
+            .sidebar-additional{
+                width: 100%;
+                padding: 0 15px;
+            }
+        }
+
+    }
+    
     .container {
         max-width: 100%;
     }
@@ -395,7 +420,9 @@
             padding: @indent__sl 0;
             margin: @indent__s 0;
             .lib-vendor-prefix-flex-direction(column);
-
+            &.fixed{
+                margin: 0;
+            }
             .logo_wrap {
                 width: 100%;
                 .lib-vendor-prefix-display(flex);
@@ -540,6 +567,21 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
 
+    .page-layout-2columns-left {
+        main{
+            .column.main{
+                width: 100%;
+                padding: 0 15px;
+            }
+            .sidebar-main,
+            .sidebar-additional{
+                width: 100%;
+                padding: 0 15px;
+            }
+        }
+
+    }
+
     .container {
         max-width: 750px;
     }
@@ -551,9 +593,9 @@
 
     .page-header {
         .header.content {
-            &.fixed {
-                padding: 0;
-            }
+            // &.fixed {
+            //     padding: 0;
+            // }
 
             .logo_wrap {
                 width: auto;
@@ -571,11 +613,11 @@
             }
 
             .menu_wrap {
-                flex: 0 0 60%;
+                flex: 0 0 70%;
             }
 
             .action_wrap {
-                flex: 0 0 40%;
+                flex: 0 0 30%;
 
                 .header.links {
                     padding-right: @indent__base;
@@ -595,6 +637,10 @@
 
             h2 {
                 margin-bottom: @indent__xl;
+            }
+
+            ul {
+                display: block !important; // Override collapsible inline display after init
             }
         }
 
@@ -621,6 +667,22 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+
+    .page-layout-2columns-left {
+        main{
+            .column.main{
+                width: 75%;
+                padding: 0 15px;
+            }
+            .sidebar-main,
+            .sidebar-additional{
+                width: 25%;
+                padding: 0 15px;
+            }
+        }
+
+    }
+
     .container {
         max-width: 970px;
     }
@@ -636,10 +698,13 @@
 
             &.fixed {
                 padding: 0 @indent__xl;
+                .menu_wrap {
+                    margin: 0;
+                }
             }
 
             .logo_wrap {
-                flex: 0 0 20%;
+                flex: 0 0 25%;
                 padding-top: 0;
 
                 img {
@@ -649,7 +714,8 @@
             }
 
             .menu_wrap {
-                flex: 0 0 55%;
+                flex: 0 0 50%;
+                margin: @indent__base 0;
             }
 
             .action_wrap {
@@ -669,21 +735,3 @@
     }
 }
 
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__lg) {
-    .page-header {
-        .header.content {
-            .lib-vendor-prefix-flex-direction(row);
-
-            .logo_wrap {
-                flex: 0 0 25%;
-
-            }
-
-            .menu_wrap {
-                flex: 0 0 50%;
-
-            }
-
-        }
-    }
-}

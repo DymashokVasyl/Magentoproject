@@ -1,6 +1,6 @@
 <?php
 /**
- * Init Banner Slider
+ * Init Sidebar Slider
  */
 ?>
 
@@ -17,6 +17,52 @@
                 "autoplay": true,
                 "autoplaySpeed": 5000
             }
+        }
+    }
+    }
+</script>
+
+<?php
+/**
+ * --------------------------------
+ */
+?>
+
+<?php
+/**
+ * Init Select for sorter
+ */
+?>
+
+<script type="text/x-magento-init">
+    {
+    ".toolbar-sorter": {
+        "elogicSelect": {
+            "selector":"#sorter",
+            "sliderOptions":{}
+        }
+    }
+    }
+</script>
+
+<?php
+/**
+ * --------------------------------
+ */
+?>
+
+<?php
+/**
+ * Init Select for limiter options
+ */
+?>
+
+<script type="text/x-magento-init">
+    {
+    ".field.limiter": {
+        "elogicSelect": {
+            "selector":".control #limiter",
+            "sliderOptions":{}
         }
     }
     }
