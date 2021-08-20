@@ -229,6 +229,88 @@
         .slick-dots {
             bottom: 10px;
         }
+
+        .filter-current{
+            .lib-css(color,@color-elogic-gray-main);
+            .filter-current-subtitle{
+                .lib-font-size(@font-size__elogic__sxl);
+                margin-bottom: @indent__s;
+                padding: 0;
+
+            }
+
+            .items{
+                padding: 0;
+            }
+            .item{
+                padding: 0;
+                margin: 0;
+                padding-bottom: @indent__s;
+                margin-bottom: @indent__s;
+
+            }
+
+            .filter-label{
+                .lib-css(font-weight,@font-weight__bold)
+            }
+
+            .action.remove{
+                top: -3px;
+                right: 0;
+                left: auto;
+            }
+        }
+
+        .filter-actions{
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            padding-top: @indent__xs;
+            border-top: 1px solid @color-elogic-gray-secondary;
+            .lib-css(font-weight, @font-weight__light);
+            margin-bottom: @indent__xl;
+
+            .clear.filter-clear{
+                .lib-css(color,@color-elogic-gray-dark);
+            }
+        }
+
+        .filter-options-content{
+                padding: 0;
+                margin-bottom: @indent__m;
+                .item {
+                    padding: 0;
+                    margin: 0;
+                    padding-bottom: @indent__xs;
+                    margin-bottom: @indent__xs;
+                    a{
+                        .lib-css(color,@color-elogic-gray);
+                        padding: 0;
+                        padding-left: @indent__base;
+                        position: relative;
+
+                        &::before{
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            border: 1px solid @color-elogic-gray;
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);                        
+                        }
+
+                        &:hover{
+                            .lib-css(background-color,transparent);
+                            .lib-css(color,@color-elogic-black);
+
+                            &::before{
+                                border-color:@color-elogic-black;
+                            }
+                        }
+                    }
+                }
+        }
     }
 
     // Toolbar
@@ -390,7 +472,7 @@
                 display: none;
             }
         }
-    }
+        }
 
     .product-item {
 
@@ -429,12 +511,12 @@
         .price-box {
             transition: all .4s ease;
 
-            .price-label {
-                display: none;
+            span[data-price-type='finalPrice']{
+                .lib-font-size(@font-size__l);
             }
 
-            .special-price {
-                .lib-font-size(@font-size__l);
+            .price-label {
+                display: none;
             }
 
             .old-price {
