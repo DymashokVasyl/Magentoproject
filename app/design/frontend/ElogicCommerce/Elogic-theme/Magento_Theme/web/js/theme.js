@@ -7,7 +7,6 @@ define([
     var backTop = $('#back__top'),
         header = $('.header.content');
 
-
     let scrolledBool = true;
 
         $(window).scroll(function () {
@@ -21,19 +20,14 @@ define([
                 $('.page-wrapper').css("marginTop","0");
             }
             
-            // console.log(header.outerHeight());
-
-
             // Back To Top
             if ($(this).scrollTop() > 100 & scrolledBool) {
                 scrolledBool = false;
                 backTop.fadeIn();
-
             }
             if ($(this).scrollTop() < 100 & !scrolledBool) {
                 scrolledBool = true;
                 backTop.fadeOut();
-
             }
         });
 
@@ -42,6 +36,4 @@ define([
                 scrollTop: 0,
             }, 500);
         });
-
-        
 });

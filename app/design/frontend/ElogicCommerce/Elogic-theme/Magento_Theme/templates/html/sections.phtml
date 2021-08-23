@@ -13,7 +13,7 @@ $groupCss = $block->getGroupCss();
 ?>
 <?php if ($detailedInfoGroup = $block->getGroupChildNames($group)):?>
     <div class="sections <?= $block->escapeHtmlAttr($groupCss) ?>">
-        <div id="close-menu" class="visible-xs">
+        <div id="close-menu" class="visible-xs"> <?php //Added block for close button om mobile menu ?>
             <span data-action="toggle-nav" class="action nav-toggle"><span><?= $block->escapeHtml(__('Close Nav')) ?></span></span>
         </div>
         <?php $layout = $block->getLayout(); ?>
