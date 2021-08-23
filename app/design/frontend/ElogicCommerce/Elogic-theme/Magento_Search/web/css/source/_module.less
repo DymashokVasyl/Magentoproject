@@ -4,14 +4,8 @@
         width: 100%;
         position: relative;
     }
-    // .block-search{
-    //     input{
-
-    //     }
-    // }
 
     .form.minisearch{
-        // display: none;
         height: 43px;
         line-height: 43px;
         display: none;
@@ -37,7 +31,6 @@
             display: block;
         }
     }
-    // .block-search input
 
     .block-search{
         .minisearch{
@@ -59,6 +52,7 @@
                     .lib-css(color,@color-elogic-white);
                 }
             }
+
             input{
                 .lib-list-reset-styles();
                 left:0;
@@ -84,14 +78,23 @@
                 height: 100%;
             }
         }
-
     }
-
-
-
 }
 
+//
+//  Desktop
+//  _____________________________________________
 
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .form.minisearch{
+        min-width: 370px;
+    } 
+    input[type=text]{
+        height: 35px;
+        line-height: 35px;
+
+    }
+}
 
 //
 //  Mobile
@@ -118,20 +121,4 @@
         height: 100%;
     }
 
-}
-
-
-//
-//  Desktop
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
-    .form.minisearch{
-        min-width: 370px;
-    } 
-    input[type=text]{
-        height: 35px;
-        line-height: 35px;
-
-    }
 }

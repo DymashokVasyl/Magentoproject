@@ -1,15 +1,11 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 /** @var \Magento\Newsletter\Block\Subscribe $block */
 ?>
-<div class="newsletter__bg">
+<?php //wrapped all form in custom block,add subtitle  ?>
+<div class="newsletter__bg"> 
     <div class="container">
-        <div class="block newsletter">
-            <div class="newsletter_wrap__text">
+        <div class="block newsletter">  
+            <div class="newsletter_wrap__text"> 
                 <h2 class="title"><?= $block->escapeHtml(__('keep updated')) ?></h2>
                 <p class="subtitle"><?= $block->escapeHtml(__('Sign up for our newletter to recevie updates an exlusive offers')) ?></p>
             </div>
