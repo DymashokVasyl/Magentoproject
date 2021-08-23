@@ -94,7 +94,15 @@
                 "arrows": true,
                 "rows": 3,
                 "slidesToShow": 1,
-		        "slidesToScroll": 1
+		        "slidesToScroll": 1,
+                "responsive": [
+                    {
+                        "breakpoint": 992,
+                        "settings": {
+                            "slidesToShow": 2
+                        }
+                    }
+                ]
             }
         }
     }
@@ -149,8 +157,6 @@
  */
 ?>
 
-
-
 <?php
 /**
  * Init Brands Slider
@@ -171,12 +177,6 @@
                 "responsive": [
                     {
                         "breakpoint": 992,
-                        "settings": {
-                            "slidesToShow": 4
-                        }
-                    },
-                    {
-                        "breakpoint": 768,
                         "settings": {
                             "slidesToShow": 3
                         }

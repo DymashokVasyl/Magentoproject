@@ -15,11 +15,7 @@ define([
             }
         },
         _create: function () {
-            console.log(`Ready select - ${this.options.selector}`);
-
             $(this.options.selector).select2(this.options.selectOptions);
-
-        
         },
     });
 

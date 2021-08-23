@@ -1,12 +1,4 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
-?>
-<?php
 /** @var $block \Magento\Framework\View\Element\Template */
 /** @var $helper \Magento\Search\Helper\Data */
 /** @var $configProvider \Magento\Search\ViewModel\ConfigProvider */
@@ -16,7 +8,7 @@ $configProvider = $block->getData('configProvider');
 <div class="block block-search">
     <div class="block block-title"><strong><?= $block->escapeHtml(__('Search')) ?></strong></div>
     <div class="block block-content">
-        <div class="dropdown">
+        <div class="dropdown"> <?php //Added block with search icon for dropdown form?>
             <div class="dropdown__toggle">
                 <div class="top-search">
                     <i class="fas fa-search"></i>

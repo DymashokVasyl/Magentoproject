@@ -8,6 +8,7 @@ define([
     'use strict';
 
     $.widget('elogic.accordion', {
+        
         options: {
             selector: "",
             collapsibleOptions:{
@@ -19,27 +20,19 @@ define([
                     easing: "easeOutCubic",
                     duration:"300"
                 },
-
-
             },
         },
     
 
-
         _create: function () {
-
             mediaCheck({
                 media: '(min-width: 767px)',
                 entry: function () {
                     $(this.options.selector).collapsible( "disable" );
                     $(this.options.selector).collapsible( "destroy" );
-
                 }.bind(this),
                 exit: function () {
-                        console.log(`Collapsible init - ${this.options.selector}`);
                         $(this.options.selector).collapsible(this.options.collapsibleOptions);
-
-
                 }.bind(this),
             });
         },

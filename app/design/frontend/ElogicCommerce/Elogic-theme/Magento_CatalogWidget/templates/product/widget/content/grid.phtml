@@ -18,13 +18,13 @@ use Magento\Framework\App\Action\Action;
     $showCart = true;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     $description = false;
-    ?>
 
-    <?php 
+    // Added variables for switch images
     $_imageHelper = $this->helper('Magento\Catalog\Helper\Image');
     $_imageSwitch = 'switch_product_list';
     $pos = $block->getPositioned();
     ?>
+
     <div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
         <?php if ($block->getTitle()) : ?>
             <div class="block-title">
@@ -39,7 +39,7 @@ use Magento\Framework\App\Action\Action;
                     <?php foreach ($items as $_item) : ?>
                         <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
                         <div class="product-item-info">
-                            <div class="product-photo">
+                            <div class="product-photo"> <?php //Wrapped two photos  ?>
                                 <?php
                                 $productImage = $block->getImage($_item, $image);
                                 $productImageSwitch = $_imageHelper->init($_item, $_imageSwitch);
