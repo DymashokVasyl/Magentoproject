@@ -11,10 +11,28 @@
             }
         }
     }
-
-
 }
 
+// 
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
+    .minicart-wrapper {
+        .action.showcart,
+        .action.showcart.active {
+            &::before {
+                display: none
+            }
+
+            span {
+                .lib-font-size(@font-size__elogic__s);
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+// 
 //  Mobile
 //  _____________________________________________
 
@@ -32,25 +50,6 @@
 
             span {
                 .lib-font-size(0);
-            }
-        }
-    }
-}
-
-//  Desktop
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
-    .minicart-wrapper {
-        .action.showcart,
-        .action.showcart.active {
-            &::before {
-                display: none
-            }
-
-            span {
-                .lib-font-size(@font-size__elogic__s);
-                text-transform: uppercase;
             }
         }
     }
