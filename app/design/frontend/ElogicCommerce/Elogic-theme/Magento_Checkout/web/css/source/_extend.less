@@ -1,13 +1,38 @@
+// 
+//  Common
+//  _____________________________________________
+
 & when (@media-common =true) {
-    .minicart-wrapper {
-        margin-left: 16px;
 
-        .action.showcart {
-            text-decoration: none;
-            .lib-css(color, @color-elogic-black);
+    .action_wrap{
+        .minicart-wrapper {
+            .lib-css(margin-left,16px);
+            .action.showcart {
+                .lib-css(text-decoration,none);
+                .lib-css(color, @color-elogic-black);
+                
+                .lib-css(font-weight,@font-weight__light);
+    
+                &:hover {
+                    .lib-css(color, @color-elogic-gray-main);
+                    .counter.qty{
+                        .lib-css(color, @color-elogic-gray-main);
+                    }
+                }
+    
+                .counter.qty{
+                    .lib-css(background, transparent);
+                    .lib-css(color, @color-elogic-black);
+                    .lib-css(margin,0);
+                    .lib-css(height,auto);
+                    .lib-css(line-height, normal);
+                    .lib-css(vertical-align,middle);
 
-            &:hover {
-                .lib-css(color, @color-elogic-gray-main);
+                    span{
+                        .lib-css(text-shadow,none);
+                        
+                    }
+                }
             }
         }
     }
@@ -21,24 +46,26 @@
     .minicart-wrapper {
         .action.showcart,
         .action.showcart.active {
+            
             &::before {
-                display: none
+                .lib-css(display,none);
             }
 
             span {
                 .lib-font-size(@font-size__elogic__s);
-                text-transform: uppercase;
+                .lib-css(text-transform,uppercase);
             }
         }
     }
 }
+
 // 
 //  Mobile
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .minicart-wrapper {
-        margin-top: 0;
+        .lib-css(margin-top,0);
 
         .action.showcart,
         .action.showcart.active {
@@ -48,8 +75,10 @@
                 .lib-font-size(@font-size__elogic__sl);
             }
 
-            span {
-                .lib-font-size(0);
+            .lib-font-size(0);
+
+            .counter.qty{
+                .lib-css(min-width,0);
             }
         }
     }

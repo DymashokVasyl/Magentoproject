@@ -1,0 +1,67 @@
+<?php
+/**
+ * @var $block \Mirasvit\Giftr\Block\Item\Add
+ */
+?>
+
+<?php 
+// Changed data-mage-init on giftr-list , added custom blocks for dropdown in modal
+?>
+    <div class="giftr-list" style="display: none"
+        data-bind="scope: 'giftr-addto__form'"
+        data-mage-init='{"elogicGiftr":{}}'>
+        <div class="registry-list" data-bind="visible: hasRegistries">
+
+            <h3 class="title__gift"><?= __('Select Gift Registry') ?></h3>
+
+            <div class="registries" data-bind="foreach: registries">
+                <label for="registry_>" class="label" data-bind="attr: { for: 'registry_' + value }">
+                <input type="checkbox" id="registry_" name="registries[]" value=""
+                    data-bind="checked: $parent.selected, value: value, attr: { id: 'registry_' + value }" />
+                    <span data-bind="text: label"></span>
+                </label>
+            </div>
+
+            <div class="select__dropdown" >
+                <div class="button">
+                <em></em>
+
+                    <ul class="select__options" data-bind="foreach: registries">
+                        <li class="select__option" >
+                            <label for="registry_>" class="label" data-bind="attr: { for: 'registry_' + value }">
+                                <span data-bind="text: label"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul  data-bind="foreach: registries">
+                    <li class="select__option" >
+                        <label for="registry_>" class="label" data-bind="attr: { for: 'registry_' + value }">
+                            <span data-bind="text: label"></span>
+                        </label>
+                    </li>
+                </ul>
+                    
+            </div>
+
+            <a id="confirm-add-to-registry" class="action add_to_giftr" href="#" data-bind="click: addProduct"><?= __('Add to gift registry') ?></a>
+        </div>
+
+        <div data-bind="visible: isMessageVisible()">
+            <span data-bind="html: getMessage()"></span> 
+        </div>
+    </div>
+
+
+    <script type="text/x-magento-init">
+{
+    "*": {
+        "elogicModalSelect": {
+            "selector": ".select__dropdown",
+            "inputs": ".registries"
+        }
+    }
+}
+</script>
+

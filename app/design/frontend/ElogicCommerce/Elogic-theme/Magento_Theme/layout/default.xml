@@ -34,5 +34,8 @@
         <referenceBlock name="header.panel.wrapper" remove="true" />
         <referenceBlock name="store.links" remove="true" />
         <referenceBlock name="store.settings" remove="true" />
+        <referenceBlock name="giftr-top-link" remove="true" />
+
+
     </body>
 </page>
