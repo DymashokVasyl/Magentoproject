@@ -62,8 +62,7 @@
             .lib-css(opacity,0);
             .lib-css(visibility,hidden);
 
-            }
-            
+            }  
         }
     }
 
@@ -80,28 +79,6 @@
             & > ul {
                 opacity: 0;
                 pointer-events: none;
-            }
-        }
-        &.open {
-            &.tilt-up {
-                animation: tilt-up .4s linear forwards;
-                .button {
-                    em {
-                        &:before {
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-            &.tilt-down {
-                animation: tilt-down .4s linear forwards;
-                .button {
-                    em {
-                        &:after {
-                            opacity: 1;
-                        }
-                    }
-                }
             }
         }
         .button {
@@ -191,28 +168,11 @@
         }
     }
 
-    @keyframes tilt-up {
-
-        40%,
-        60% {
-            transform: perspective(500px) rotateX(8deg);
-        }
-    }
-
-    @keyframes tilt-down {
-
-        40%,
-        60% {
-            transform: perspective(500px) rotateX(-8deg);
-        }
-    }
-
-
     // Modal Styles
     .modals-wrapper {
         .modal__giftr {
             .modal-inner-wrap {
-                webkit-transform: translateY(100%);
+                -webkit-transform: translateY(100%);
                 transform: translateY(50%);
                 width: 50%;
                 border-radius: 5px;
@@ -270,10 +230,6 @@
             }
         }
     }
-
-
-    
-
 }
 
 //
