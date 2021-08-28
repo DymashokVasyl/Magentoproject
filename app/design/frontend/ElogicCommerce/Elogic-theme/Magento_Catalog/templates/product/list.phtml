@@ -1,8 +1,5 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+
 use Magento\Framework\App\Action\Action;
 
 ?>
@@ -48,9 +45,11 @@ $_helper = $block->getData('outputHelper');
     <?php 
     $_imageHelper = $this->helper('Magento\Catalog\Helper\Image');
     $_imageSwitch = 'switch_product_list';
-    $pos = $block->getPositioned();
     ?>
 
+<?php 
+    // Created variables for image switch , and written a check on viewMode for display different templates
+?>
 
     <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
         <ol class="product-<?= $viewMode ?>-items">
