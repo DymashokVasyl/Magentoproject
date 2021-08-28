@@ -31,7 +31,6 @@ define([
             return data;
         },
 
-
         addProduct: function() {
             if (!$('#product_addtocart_form').valid()) {
                 return false;
@@ -54,19 +53,25 @@ define([
             });
         },
 
-
         isMessageVisible: function() {
             return !this.hasRegistries() || !this.isLoggedIn();
         },
 
+        showModal:function() {
+            $('.giftr-list').modal('openModal'); 
+        },
 
         toRedirect: function () {
             if (!this.isLoggedIn()) {
                 window.location.href = loginUrl;
-            } 
-        
+            } else {
+                if(this.registries().length == 1){
+                    this.addProduct();
+                } else {
+                    this.showModal();
+                }
+            }
         },
-        
     }
 
     return function (target) {

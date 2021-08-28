@@ -60,6 +60,7 @@
         &.open{
             ~ .action.add_to_giftr{
             .lib-css(opacity,0);
+            .lib-css(visibility,hidden);
 
             }
             
@@ -166,7 +167,7 @@
 
                 &:before,
                 &:after {
-                    .lib-css(content,'');
+                    content:'';
                     .lib-css(width,7px);
                     .lib-css(height,7px);
                     .lib-css(opacity,.4);

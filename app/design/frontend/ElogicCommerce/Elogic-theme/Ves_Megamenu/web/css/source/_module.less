@@ -160,7 +160,7 @@
                 }
 
                 // Hover
-                
+
                 .levelMenu(@n, @i: 0) when (@i =< @n) {
                     &.level@{i} {
                         .submenu {
@@ -192,9 +192,9 @@
 
                 // For delete hover effect on armchair 
 
-                &.arm_chair_item{
+                &.arm_chair_item {
                     .levelMenu(@n, @i: 1) when (@i =< @n) {
-                        .level@{i} {    
+                        .level@{i} {
                             >.submenu {
                                 display: block;
                                 opacity: 1;
@@ -202,10 +202,11 @@
                                 transform: scaleY(1);
                             }
                         }
-    
+
                         .levelMenu(@n, @i + 1);
                     }
-                .levelMenu(2);
+
+                    .levelMenu(2);
                 }
             }
         }
@@ -317,6 +318,7 @@
 
             img {
                 padding-bottom: @indent__s;
+
                 &:hover,
                 &:focus,
                 &:active {
@@ -391,14 +393,16 @@
     .arm_chair__side {
         .side_items {
             .lib-vendor-prefix-flex-direction(row);
-            .item{
+
+            .item {
                 padding: 0 @indent__sl;
             }
+
             img {
                 padding-bottom: 0;
-                }
             }
         }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__xl) {
@@ -490,6 +494,7 @@
 
             .ves-megamenu {
                 >.navigation {
+
                     .level0.active,
                     .level0.has-active {
                         >a {
