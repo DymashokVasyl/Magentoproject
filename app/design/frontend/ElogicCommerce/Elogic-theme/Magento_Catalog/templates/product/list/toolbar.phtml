@@ -13,7 +13,7 @@
         $widgetOptions = $this->helper(\Magento\Framework\Json\Helper\Data::class)->jsonEncode($widget['productListToolbarForm']);
     ?>
     <div class="toolbar toolbar-products" data-mage-init='{"productListToolbarForm":<?= /* @noEscape */ $widgetOptions ?>}'>
-        <div class="toolbar-products__left">
+        <div class="toolbar-products__left"> <?php //Wrapped items in block ?>
             <?php if ($block->isExpanded()) :?>
                 <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
             <?php endif; ?>
@@ -26,7 +26,7 @@
             <?php endif; ?>
         </div>
 
-        <div class="toolbar-products__right">
+        <div class="toolbar-products__right"> <?php //Wrapped items in block ?>
             <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')) ?>
         </div>
 
