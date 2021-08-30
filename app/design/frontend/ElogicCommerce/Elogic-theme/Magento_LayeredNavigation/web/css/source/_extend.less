@@ -1,0 +1,47 @@
+& when (@media-common =true) {
+
+    #price_text{
+        padding: 0 0 @indent__l;
+        text-align: center;
+        .from_fixed,
+        .to_fixed{
+            border: 1px solid @color-elogic-gray-secondary;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 @indent__s;
+        }
+
+        .space_fixed{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 @indent__s;
+        }
+    }
+
+    #price_slider{
+        .lib-css(background,@color-elogic-black);
+        height: 1px;
+        border-radius: 0;
+
+        .ui-slider-handle{
+            .lib-css(background,@color-elogic-black);
+            border: medium none;
+            border-radius: 0;
+            height: 16px;
+            margin: 0 -8px;
+            top: -8px;
+            width: 16px;
+            padding: 0;
+            display: inline-block;
+
+            &::before{
+                display: none;
+            }
+        }
+    }
+    
+}

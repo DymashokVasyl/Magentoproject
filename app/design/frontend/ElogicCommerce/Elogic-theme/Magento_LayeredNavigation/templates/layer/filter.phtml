@@ -1,0 +1,81 @@
+<?php
+/** @var \Magento\LayeredNavigation\Block\Navigation\FilterRenderer $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magento\LayeredNavigation\ViewModel\Layer\Filter $viewModel */
+$viewModel = $block->getData('product_layer_view_model');
+?>
+
+<ol class="items">
+    <?php foreach ($filterItems as $filterItem): ?>
+        <?php 
+            $filter = $filterItem->getFilter();
+            $attributeModel = $filter->getName();
+        ?>
+        <li class="item">
+        <?php if ($attributeModel == 'Price'): ?>
+            <?php $productCollection = $filter->getLayer()->getProductCollection();
+        
+                $minPrice = $filter->getMinPrice();
+                $maxPrice = $filter->getMaxPrice();
+
+                if(!$minPrice){
+                    $minPrice = $productCollection->getMinPrice();
+                }
+                if(!$maxPrice){
+                    $maxPrice = $productCollection->getMaxPrice();
+                }
+
+                ?>
+                
+                <div id="lof_price_attribute" data-mage-init='{"elogicPriceSlide":{
+                    "sliderElement": "#price_slider",
+                    "textElement": "#price_text",
+                    "ajaxUrl": <?php /* @escapeNotVerified */ echo $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($filterItem->getUrl()) ?>,
+                    "minPrice": <?= $minPrice ?>,
+                    "maxPrice": <?= $maxPrice ?>
+                }}'>
+                    <div id="price_text">
+                        <span class="from_fixed">
+                            $<?= $minPrice ?>
+                        </span>
+                        <span class="space_fixed">
+                            -       
+                        </span>
+                        <span class="to_fixed">
+                            $<?= $maxPrice ?>
+                        </span>
+                    </div>
+                    <div id="price_slider"></div> 
+                </div>
+
+            <?php break; ?>
+        <?php  endif; ?>
+            <?php if ($filterItem->getCount() > 0): ?>
+                <a
+                    href="<?= $escaper->escapeUrl($filterItem->getUrl()) ?>"
+                    rel="nofollow"
+                ><?= /* @noEscape */ $filterItem->getLabel() ?><?php
+                if ($viewModel->shouldDisplayProductCountOnLayer()): ?><span
+                        class="count"><?= /* @noEscape */ (int) $filterItem->getCount() ?><span
+                            class="filter-count-label"><?php
+                            if ($filterItem->getCount() == 1): ?>
+                                <?= $escaper->escapeHtml(__('item')) ?><?php
+                            else:
+                                ?><?= $escaper->escapeHtml(__('item')) ?><?php
+                            endif;?></span></span>
+                    <?php endif; ?></a>
+            <?php else: ?>
+                <?= /* @noEscape */ $filterItem->getLabel() ?><?php
+                if ($viewModel->shouldDisplayProductCountOnLayer()): ?><span
+                        class="count"><?= /* @noEscape */ (int) $filterItem->getCount() ?><span
+                            class="filter-count-label"><?php
+                            if ($filterItem->getCount() == 1): ?>
+                                <?= $escaper->escapeHtml(__('items')) ?><?php
+                            else:
+                                ?><?= $escaper->escapeHtml(__('items')) ?><?php
+                            endif;?></span></span>
+                <?php endif; ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>

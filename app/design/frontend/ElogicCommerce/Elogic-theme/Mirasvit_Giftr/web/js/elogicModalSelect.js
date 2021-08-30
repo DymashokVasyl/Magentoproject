@@ -14,6 +14,7 @@ define([
         _create: function () {
             var selector = this.options.selector,
                 inputs = this.options.inputs;
+                console.log(selector);
 
             $(document).on('click', selector, function (e) {
 
@@ -29,16 +30,17 @@ define([
 
             $(document).on('click', `${selector} > ul > li `, function (e) {
 
+                let li = $(this),
+                    index = li.index(),
+                    label = $(li.children())
+
                 $(`${inputs} input`).each(function (i) {
                     $(this).prop('checked', false);
                 });
-
-                let li = $(this),
-                    index = li.index();
-
+                
                 $(`${selector} ul`).css('transform', `translateY(${index*-41}px)`);
 
-                $(`${inputs} input#registry_${index+1}`).attr('checked', true);
+                $(`${inputs} input#${label.attr("for")}`).attr('checked', true);
 
             });
         },
