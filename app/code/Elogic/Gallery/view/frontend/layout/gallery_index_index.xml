@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="elogic.gallery.index" template="Elogic_Gallery::index.phtml" />
+            <block class="Elogic\Gallery\Block\Index" name="elogic.gallery.index" template="Elogic_Gallery::index.phtml" />
             <block class="Magento\Cms\Block\Block" name="elogic.gallery">
                 <arguments>
                     <argument name="block_id" xsi:type="string">gallery</argument>
