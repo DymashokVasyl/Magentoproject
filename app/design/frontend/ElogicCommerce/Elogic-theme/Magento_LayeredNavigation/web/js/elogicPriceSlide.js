@@ -32,7 +32,6 @@ define([
                 change: function (event, ui) {
                     // console.log(self.getUrl(self.options.ajaxUrl));
 
-                    // ajaxSubmit(price_url.replace(encodeURI('{price_start}'), ui.values[0]).replace(encodeURI('{price_end}'), ui.values[1]));
 
                     self.windowRedirect(self.getUrl(self.options.ajaxUrl),ui.values[0],ui.values[1]);
                 }

@@ -77,7 +77,7 @@ define([
                 success: function (response) {
                     var giftr = $('[data-block="addtogiftr"]');
                     giftr.find('[data-role="dropdownDialog"]').dropdownDialog("close");
-                    $('.giftr-dropdown').hide();
+                    $('.giftr-dropdown').hide(); 
                     if (response.status == this.login) {
                         setLocation(response.message);
                     }

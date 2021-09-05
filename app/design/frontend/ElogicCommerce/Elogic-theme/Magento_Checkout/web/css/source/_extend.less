@@ -4,38 +4,128 @@
 
 & when (@media-common =true) {
 
-    .action_wrap{
+    .action_wrap {
         .minicart-wrapper {
-            .lib-css(margin-left,16px);
+            .lib-css(margin-left, 16px);
+
             .action.showcart {
-                .lib-css(text-decoration,none);
+                .lib-css(text-decoration, none);
                 .lib-css(color, @color-elogic-black);
-                
-                .lib-css(font-weight,@font-weight__light);
-    
+
+                .lib-css(font-weight, @font-weight__light);
+
                 &:hover {
                     .lib-css(color, @color-elogic-gray-main);
-                    .counter.qty{
+
+                    .counter.qty {
                         .lib-css(color, @color-elogic-gray-main);
                     }
                 }
-    
-                .counter.qty{
+
+                .counter.qty {
                     .lib-css(background, transparent);
                     .lib-css(color, @color-elogic-black);
-                    .lib-css(margin,0);
-                    .lib-css(height,auto);
+                    .lib-css(margin, 0);
+                    .lib-css(height, auto);
                     .lib-css(line-height, normal);
-                    .lib-css(vertical-align,middle);
+                    .lib-css(vertical-align, middle);
 
-                    span{
-                        .lib-css(text-shadow,none);
-                        
+                    span {
+                        .lib-css(text-shadow, none);
+
                     }
+                }
+            }
+
+            &.active {
+                .block-minicart {
+                    padding: 50px 50px 70px;
+                    top: 155%;
+
+                    .items-total {
+                        .lib-font-size(@font-size__base);
+                        .lib-css(color, @color-elogic-black);
+
+                    }
+
+                    .count {
+                        .lib-css(font-family, @font-family-name__oswald);
+                        .lib-css(padding-right, @indent__xs);
+                    }
+
+                    .subtotal {
+                        .label {
+                            .lib-font-size(@font-size__base);
+                            .lib-css(color, @color-elogic-black);
+                            .lib-css(text-transform, capitalize);
+                            .lib-css(letter-spacing, .25px);
+                            .lib-css(font-weight, @font-weight__light);
+                        }
+
+                        .price {
+                            .lib-css(font-family, @font-family-name__oswald);
+                            .lib-font-size(@font-size__elogic__sxl);
+                            .lib-css(color, @color-elogic-black);
+                            .lib-css(font-weight, @font-weight__semibold);
+                        }
+                    }
+
+                    .actions {
+                        .action.checkout {
+                            .lib-font-size(13px);
+                            .lib-css(text-transform, uppercase);
+                            .lib-css(line-height, .5);
+                            .lib-css(padding, @indent__sl @indent__m);
+                            .lib-css(letter-spacing, .25px);
+                            .lib-css(background, @color-elogic-black);
+                            .lib-css(color,@color-elogic-white);
+                            .lib-css(border, none);
+                            .lib-css(outline, none);
+                            .lib-css(border-radius, 0);
+                        }
+
+                        .action.viewcart{
+                            .lib-css(padding, @indent__sl @indent__m);
+                            .lib-css(background, @color-elogic-black);
+
+                            display: block;
+                            background: #080808;
+                            color: #fff;
+                        }
+
+                    }
+
+                }
+
+                .minicart-items-wrapper {
+                    .lib-css(margin,0);
+                    .lib-css(padding,@indent__l 0);
+                    .lib-css(border-left,none);
+                    .lib-css(border-right,none);
+                    .lib-css(max-height,300px);
+                    .lib-css(overflow,auto);
+                    
+                    .product-item{
+                        .lib-css(margin,0);
+
+                        &-details{
+                        .lib-css(margin,0);
+                        .lib-css(padding,0);
+
+                        }
+
+                        &-name{
+                            .lib-css(text-transform, uppercase);
+
+                        }
+                    }
+
                 }
             }
         }
     }
+
+
 }
 
 // 
@@ -44,16 +134,17 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .minicart-wrapper {
+
         .action.showcart,
         .action.showcart.active {
-            
+
             &::before {
-                .lib-css(display,none);
+                .lib-css(display, none);
             }
 
             span {
                 .lib-font-size(@font-size__elogic__s);
-                .lib-css(text-transform,uppercase);
+                .lib-css(text-transform, uppercase);
             }
         }
     }
@@ -65,7 +156,7 @@
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
     .minicart-wrapper {
-        .lib-css(margin-top,0);
+        .lib-css(margin-top, 0);
 
         .action.showcart,
         .action.showcart.active {
@@ -73,13 +164,13 @@
             &::before {
                 .lib-css(color, @color-elogic-black);
                 .lib-font-size(@font-size__elogic__sl);
-                .lib-css(vertical-align,middle);
+                .lib-css(vertical-align, middle);
             }
 
             .lib-font-size(0);
 
-            .counter.qty{
-                .lib-css(min-width,0);
+            .counter.qty {
+                .lib-css(min-width, 0);
             }
         }
     }

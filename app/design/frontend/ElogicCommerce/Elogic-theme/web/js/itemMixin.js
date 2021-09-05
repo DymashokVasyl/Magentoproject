@@ -6,6 +6,7 @@ define([
     'use strict';
 
     var loginUrl = url.build('customer/account/login');
+    var oneInit = true;
     const mixin = {
 
         initialize: function () {
@@ -72,6 +73,10 @@ define([
                     this.addProduct();
                 } else {
                     this.showModal();
+                    if (oneInit) {
+                        $(`.registries label:first-child input`).trigger( "click" );
+                        oneInit = false;
+                    }
                 }
             }
         },
