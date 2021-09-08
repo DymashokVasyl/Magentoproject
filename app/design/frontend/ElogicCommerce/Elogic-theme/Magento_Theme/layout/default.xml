@@ -1,0 +1,38 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Header -->
+        <referenceContainer name="header.container" htmlClass="page-header container" />
+        <referenceContainer name="header-wrapper">
+            <container name="logo.wrapper" as="logo-wrap" label="Logo Wrapper" htmlTag="div" htmlClass="logo_wrap" />
+            <container name="menu.wrapper" as="menu-wrap" label="Menu Wrapper" htmlTag="div" htmlClass="menu_wrap" />
+            <container name="action.wrapper" as="action-wrap" label="Action Wrapper" htmlTag="div"
+                htmlClass="action_wrap" />
+        </referenceContainer>
+        <!-- Footer -->
+        <referenceContainer name="footer-container">
+                <block class="Magento\Cms\Block\Block" name="footer_links_block-elogic">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_block-elogic</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="scripts"
+                template="Magento_Theme::scripts.phtml" after="-" />
+        </referenceContainer>
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+        <!-- Move -->
+        <move element="logo" destination="logo.wrapper" after="-" />
+        <move element="navigation.sections" destination="menu.wrapper" after="-" />
+        <move element="top.links" destination="action.wrapper" after="-" />
+        <move element="minicart" destination="top.links" before="wish-list-link" />
+        <move element="top.search" destination="top.links" before="minicart" />
+        <move element="form.subscribe" destination="footer-container" before="-" />
+        <!-- Remove -->
+        <referenceBlock name="register-link" remove="true" /> <!-- for Create Account Link -->
+        <referenceBlock name="my-account-link" remove="true" />
+        <referenceBlock name="header.panel.wrapper" remove="true" />
+        <referenceBlock name="store.links" remove="true" />
+        <referenceBlock name="store.settings" remove="true" />
+    </body>
+</page>
