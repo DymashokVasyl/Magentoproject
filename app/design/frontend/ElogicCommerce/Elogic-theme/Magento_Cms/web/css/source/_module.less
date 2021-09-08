@@ -67,7 +67,8 @@
     .banner__item {
         .lib-css(background-color, @color-elogig-bg);
         .lib-vendor-prefix-display(flex) !important; // //Override styles slick slider
-        justify-content: center;
+        .lib-vendor-justify-content(center);
+
 
         .banner__body {
             .lib-vendor-prefix-display(flex);
@@ -165,10 +166,9 @@
         margin: 0 @indent__sl;
         position: relative;
         .lib-vendor-prefix-display(flex);
-        justify-content: space-between;
+        .lib-vendor-justify-content(space-between);
         .lib-vendor-prefix-flex-direction(column);
         .lib-vendor-box-align(center);
-
 
         &::before {
             content: '';
@@ -335,12 +335,14 @@
             .lib-list-reset-styles();
             .lib-vendor-prefix-display(flex);
             .lib-vendor-prefix-flex-wrap(wrap);
-            justify-content: center;
+            .lib-vendor-justify-content(center);
+
 
             .shop_by_brands__item {
                 .lib-vendor-prefix-display(flex) !important; // //Override styles slick slider;
                 .lib-vendor-prefix-flex-direction(column);
-                justify-content: center;
+                .lib-vendor-justify-content(center);
+
                 .lib-vendor-box-align(center);
             }
 
@@ -619,12 +621,13 @@
     .shop_by_brands__items {
         .lib-list-reset-styles();
         .lib-vendor-prefix-display(flex);
-        justify-content: center;
+        .lib-vendor-justify-content(center);
+
 
         .shop_by_brands__item {
             .lib-vendor-prefix-display(flex);
             .lib-vendor-prefix-flex-direction(column);
-            justify-content: center;
+            .lib-vendor-justify-content(center);
             .lib-vendor-box-align(center);
 
         }
