@@ -3,6 +3,12 @@
 
 & when (@media-common =true) {
 
+    body {
+        .nav-sections {
+            margin: 0;
+        }
+    }
+
     .cms-home.cms-index-index.page-layout-1column {
         .page-wrapper>main.page-main {
             max-width: 100%;
@@ -10,30 +16,6 @@
             padding: 0;
             margin: 0;
         }
-
-        .nav-sections {
-            margin: 0;
-        }
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        padding: 0;
-        margin: 0;
-        .lib-css(color,@color-elogic-black);
-    }
-
-    a {
-        transition: all .4s ease;
-    }
-
-    .container {
-        margin: 0 auto;
     }
 
     h2.title {
@@ -363,6 +345,7 @@
 
             .brand__name {
                 margin-top: @indent__s;
+                text-align: center;
 
                 a {
                     color: @color-elogic-black;
@@ -373,20 +356,37 @@
                     }
                 }
             }
+            
+        }
 
-            .slick-arrow {
-                top: -20%;
-                right: 0;
+        .slick-slide{
+            >div{
+                margin: @indent__s;
+                padding: 2%;
+                filter: blur(1px);
+                transition: all 300ms ease;
             }
 
-            .slick-arrow.custom__prev {
-                right: 45px;
+            &.slick-center{
+                >div{
+                    transform: scale(1.08);
+                    filter: none;
+                }
             }
+        }
 
-            .slick-dots {
-                position: relative;
-                margin-top: @indent__xl;
-            }
+        .slick-arrow {
+            top: -20%;
+            right: 0;
+        }
+
+        .slick-arrow.custom__prev {
+            right: 45px;
+        }
+
+        .slick-dots {
+            position: relative;
+            margin-top: @indent__xl;
         }
     }
 }
@@ -405,14 +405,13 @@
     }
 
     .is_like_heading2 {
-        .lib-font-size(@font-size__elogic__l);
+        .lib-font-size(@font-size__elogic__sxl);
         .lib-css(font-weight, @font-weight__light);
-
     }
 
     .banner__item {
         .banner__body {
-            padding: @indent__xl 0;
+            padding: @indent__xl @indent__base;
 
             .banner__text {
                 margin-right: 0;
@@ -445,6 +444,10 @@
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l ) {
     .container {
         max-width: 970px;
+    }
+
+    .is_like_heading2 {
+        .lib-font-size(@font-size__elogic__l);
     }
 
     .banner__item {
@@ -551,16 +554,14 @@
 }
 
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__m) {
-    .container {
-        max-width: 100%;
-    }
+
 
     h2.title {
         .lib-font-size(@font-size__elogic__l);
     }
 
     .banner__item {
-        padding: @indent__m @indent__base ceil(@indent__base + @indent__m);
+        padding: @indent__m 0 ceil(@indent__base + @indent__m);
 
         .banner__body {
             .lib-vendor-prefix-flex-direction(column);
@@ -623,7 +624,8 @@
             .lib-vendor-prefix-display(flex);
             .lib-vendor-prefix-flex-direction(column);
             justify-content: center;
-            align-items: center;
+            .lib-vendor-box-align(center);
+
         }
 
         .brand__name {
