@@ -2,6 +2,7 @@
 // ---------------------------------------------
 
 & when (@media-common =true) {
+
     .cms-home.cms-index-index.page-layout-1column {
         .page-wrapper>main.page-main {
             max-width: 100%;
@@ -38,13 +39,19 @@
     h2.title {
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        .lib-font-size(@font-size__elogic__xl);
         .lib-css(color, @color-elogic-black);
         .lib-css(font-weight, @font-weight__bold)
     }
 
     h2.title span {
         .lib-css(font-weight, @font-weight__regular)
+    }
+
+    .is_like_heading2 {
+        .lib-css(font-family, @font-family-name__oswald);
+        .lib-css(color, @color-elogic-gray-dark);
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
     p.subtitle {
@@ -60,18 +67,28 @@
         transition: all .4s ease;
     }
 
-    .banner__wrapper {
+    .block-title {
+        .lib-font-size(@font-size__elogic__sl);
+        .lib-css(color, @color-elogic-black);
+        padding-bottom: @indent__base;
+        border-bottom: 1px solid @color-elogic-gray-secondary;
+        margin-bottom: @indent__xl;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        strong {
+            .lib-css(font-weight, @font-weight__semibold)
+        }
+    }
+
+    .banner__item {
         .lib-css(background-color, @color-elogig-bg);
-        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-display(flex) !important; // //Override styles slick slider
         justify-content: center;
-        padding: ceil(@indent__base + @indent__xl) @indent__xl ceil((@indent__m*4) + @indent__s);
 
         .banner__body {
             .lib-vendor-prefix-display(flex);
-
-            div {
-                flex: 0 0 50%;
-            }
 
             .banner__text {
                 align-self: center;
@@ -83,11 +100,16 @@
             }
 
             .banner__pic>img {
-                max-width: 75%;
                 height: auto;
                 display: block;
                 margin: 0 auto;
             }
+        }
+    }
+
+    .banner__wrapper {
+        .slick-dots {
+            bottom: 35px;
         }
     }
 
@@ -180,7 +202,6 @@
         }
 
         .november_sale__text {
-            text-align: center;
             text-transform: uppercase;
             margin-bottom: @indent__l;
 
@@ -194,11 +215,25 @@
         }
     }
 
+    .group_product__item {
+        .slick-arrow {
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+            .slick-arrow {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
     .news_blog__wrap {
         margin: 0 @indent__sl;
 
         .news_blog__heading {
-            margin-top: ceil(@indent__xl + @indent__l);
             margin-bottom: @indent__l;
             padding-bottom: @indent__base;
             position: relative;
@@ -228,12 +263,10 @@
             .lib-vendor-prefix-display(flex);
             .lib-vendor-prefix-flex-wrap(wrap);
             margin: 0 -@indent__sl;
-
         }
 
         .blog_item__content {
             margin: 0 @indent__sl;
-
         }
 
         .blog_item__title {
@@ -247,7 +280,6 @@
                     .lib-css(color, @color-elogic-black);
                     line-height: @line-height__l;
                 }
-
             }
         }
 
@@ -273,7 +305,7 @@
             letter-spacing: .25px;
             margin-top: @indent__sl;
             line-height: @line-height__l;
-            .lib-css(font-weight,@font-weight__light);
+            .lib-css(font-weight, @font-weight__light);
 
             p {
                 .lib-css(color, @color-elogic-gray-main);
@@ -323,7 +355,7 @@
             justify-content: center;
 
             .shop_by_brands__item {
-                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-display(flex) !important; // //Override styles slick slider;
                 .lib-vendor-prefix-flex-direction(column);
                 justify-content: center;
                 .lib-vendor-box-align(center);
@@ -341,6 +373,20 @@
                     }
                 }
             }
+
+            .slick-arrow {
+                top: -20%;
+                right: 0;
+            }
+
+            .slick-arrow.custom__prev {
+                right: 45px;
+            }
+
+            .slick-dots {
+                position: relative;
+                margin-top: @indent__xl;
+            }
         }
     }
 }
@@ -354,18 +400,44 @@
         max-width: 750px;
     }
 
-    .news_blog__wrap {
-        .news_blog__items {
-            .news_blog__item {
-                flex: 0 0 50%;
-                margin-bottom: @indent__m;
+    h2.title {
+        .lib-font-size(@font-size__elogic__xl);
+    }
+
+    .is_like_heading2 {
+        .lib-font-size(@font-size__elogic__l);
+        .lib-css(font-weight, @font-weight__light);
+
+    }
+
+    .banner__item {
+        .banner__body {
+            padding: @indent__xl 0;
+
+            .banner__text {
+                margin-right: 0;
+                margin-left: @indent__m;
+
+            }
+
+            .banner__pic img {
+                max-width: 75%;
+                height: 350px;
             }
         }
     }
 
-    .shop_by_brands__items {
-        .shop_by_brands__item {
-            flex: 0 0 33.33%;
+    .november__sale {
+        .november_sale__text {
+            text-align: center;
+        }
+    }
+
+    .news_blog__wrap {
+        .news_blog__items {
+            .news_blog__item {
+                margin-bottom: @indent__m;
+            }
         }
     }
 }
@@ -375,10 +447,20 @@
         max-width: 970px;
     }
 
-    .banner__wrapper {
+    .banner__item {
+        padding: ceil(@indent__base + @indent__xl) 0 ceil((@indent__m*4) + @indent__s);
+
         .banner__body {
+            padding: 0;
+
+            .banner__text {
+                margin-right: @indent__xl;
+            }
+
             .banner__pic img {
-                max-width: 100%;
+                width: 100%;
+                max-width: 420px;
+                height: 450px;
             }
         }
     }
@@ -413,27 +495,9 @@
     .november__sale {
         .lib-vendor-prefix-flex-direction(row);
 
-        .november__sale {
-            .lib-vendor-prefix-flex-direction(row);
-
-            .november_sale__text {
-                text-align: left;
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    .news_blog__wrap {
-        .news_blog__items {
-            .news_blog__item {
-                flex: 0 0 33.33%
-            }
-        }
-    }
-
-    .shop_by_brands__items {
-        .shop_by_brands__item {
-            flex: 0 0 20%;
+        .november_sale__text {
+            text-align: left;
+            margin-bottom: 0;
         }
     }
 }
@@ -443,10 +507,13 @@
         max-width: 1350px;
     }
 
-    .banner__wrapper {
+    .banner__item {
+        padding: ceil(@indent__base + @indent__xl) @indent__xl ceil((@indent__m*4) + @indent__s);
+
         .banner__body {
+
             .banner__pic img {
-                max-width: 100%;
+                height: 500px;
             }
         }
     }
@@ -456,16 +523,6 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__xs) {
-    .news_blog__wrap {
-        .news_blog__items {
-            .news_blog__item {
-                flex: 0 0 100%
-            }
-        }
-    }
-}
-
 .media-width(@extremum, @break) when (@extremum ='max') and (@break =@screen__s) {
     h2.title {
         .lib-font-size(@font-size__elogic__l);
@@ -473,6 +530,12 @@
 
     a.link {
         .lib-font-size(@font-size__s);
+    }
+
+    .banner__item {
+        .banner__body {
+            padding: @indent__xl 0;
+        }
     }
 
     .category__wrap_items {
@@ -496,15 +559,11 @@
         .lib-font-size(@font-size__elogic__l);
     }
 
-    .banner__wrapper {
+    .banner__item {
         padding: @indent__m @indent__base ceil(@indent__base + @indent__m);
 
         .banner__body {
             .lib-vendor-prefix-flex-direction(column);
-
-            div {
-                flex: 0 0 100%;
-            }
 
             .banner__text {
                 text-align: center;
@@ -518,6 +577,12 @@
             .banner__pic img {
                 max-width: 55%;
             }
+        }
+    }
+
+    .banner__items {
+        .slick-track{
+            .lib-css(background-color, @color-elogig-bg);
         }
     }
 
@@ -536,6 +601,7 @@
         padding: ceil(2*@indent__m) @indent__l;
 
         .november_sale__text {
+            text-align: center;
             margin-bottom: @indent__sl;
         }
     }
@@ -543,7 +609,6 @@
     .news_blog__wrap {
         .news_blog__items {
             .news_blog__item {
-                flex: 0 0 50%;
                 margin-bottom: @indent__m;
             }
         }
@@ -555,7 +620,6 @@
         justify-content: center;
 
         .shop_by_brands__item {
-            flex: 0 0 20%;
             .lib-vendor-prefix-display(flex);
             .lib-vendor-prefix-flex-direction(column);
             justify-content: center;

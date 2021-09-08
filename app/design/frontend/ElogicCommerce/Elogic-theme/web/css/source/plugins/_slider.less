@@ -1,0 +1,168 @@
+// Common
+// ---------------------------------------------
+
+& when (@media-common =true) {
+
+    // Slider
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .slick-list {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+    }
+
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .slick-track {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        .slick-loading & {
+            visibility: hidden;
+        }
+    }
+
+    .slick-slide {
+        float: left;
+        height: 100%;
+        min-height: 1px;
+
+        [dir="rtl"] & {
+            float: right;
+        }
+
+        img {
+            display: block;
+        }
+
+        &.slick-loading img {
+            display: none;
+        }
+
+        display: none;
+
+        &.dragging img {
+            pointer-events: none;
+        }
+
+        .slick-initialized & {
+            display: block;
+        }
+
+        .slick-loading & {
+            visibility: hidden;
+        }
+
+        .slick-vertical & {
+            display: block;
+            height: auto;
+            border: 1px solid transparent;
+        }
+    }
+
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
+
+    // Custom
+    .slick-arrow {
+        position: absolute;
+        top: -78px;
+        right: 15px;
+        text-transform: uppercase;
+        .lib-css(color, @color-elogic-black);
+        .lib-css(font-weight, @font-weight__light);
+        cursor: pointer;
+
+        &.custom__prev {
+            right: 63px;
+            border-right: 1px solid @color-elogic-black;
+            padding-right: 15px;
+        }
+
+        &.custom__next {
+            padding-left: 15px;
+        }
+    }
+
+    .slick-dots {
+        .lib-list-reset-styles();
+        margin: 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+
+            &.slick-active{
+                button{
+                    .lib-css(background,@color-elogic-black);
+                } 
+            }
+        }
+
+        button {
+            background: transparent;
+            outline: none;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            font-size: 0;
+            margin: @indent__xs;
+            width: 10px;
+            height: 10px;
+            border: 2px solid @color-elogic-black;
+        }
+
+    }
+
+    // End Slider
+}

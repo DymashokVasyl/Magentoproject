@@ -27,21 +27,6 @@
 
     //  Product Lists
 
-    .block-title {
-        .lib-font-size(@font-size__elogic__sl);
-        .lib-css(color, @color-elogic-black);
-        padding-bottom: @indent__base;
-        border-bottom: 1px solid @color-elogic-gray-secondary;
-        margin-bottom: @indent__xl;
-        position: relative;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-
-        strong {
-            .lib-css(font-weight, @font-weight__semibold)
-        }
-    }
-
     .product-item {
         .action.towishlist {
             &::before {
@@ -312,7 +297,7 @@
 
     .group__product {
         .group_product__item {
-            flex: 0 0 50%;
+            width: 100%;
         }
     }
 }
@@ -329,7 +314,7 @@
 
     .group__product {
         .group_product__item {
-            flex: 0 0 33.33%;
+            width: 33.33%;
         }
     }
 }
@@ -364,5 +349,8 @@
 
     .group__product {
         .lib-vendor-prefix-flex-direction(column);
+        .group_product__item {
+            width: 100%;
+        }
     }
 }

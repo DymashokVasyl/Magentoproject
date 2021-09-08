@@ -22,6 +22,7 @@ define([
                 },
             },
         },
+    
 
         _create: function () {
             mediaCheck({
