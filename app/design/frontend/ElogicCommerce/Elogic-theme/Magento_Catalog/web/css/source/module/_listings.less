@@ -25,6 +25,71 @@
 
 & when (@media-common =true) {
 
+    .catalog-category-view {
+
+        .select2-container {
+            border: 1px solid @color-elogic-gray-secondary;
+
+            .select2-selection {
+                border: none;
+                background: transparent;
+                padding: @indent__sl 0;
+                position: relative;
+
+                &:before {
+                    content: @icon-elogic-angle-down;
+                    .lib-css(font-family, @font-family-awesome);
+                    .lib-css(font-weight, @font-weight-icons);
+                    .lib-css(color, @color-elogic-gray-main);
+                    position: absolute;
+                    right: 5px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &__arrow {
+                    display: none;
+
+                }
+                .select2-selection__rendered{
+                    display: none;
+                }
+            }
+
+            &--open {
+                .select2-selection {
+                    &:before {
+                        content: @icon-elogic-angle-up;
+                    }
+                }
+
+                .select2-dropdown {
+                    border: 1px solid @color-elogic-black;
+                    transition: .3s ease-in-out;
+
+                    .select2-results__options {
+                        li {
+                            margin: 0;
+                        }
+
+                        .select2-results__option{
+                            &--highlighted {
+                                color: @color-elogic-white ;
+                                background-color: @color-elogic-gray-dark;
+                            }
+                            &--selected {
+                                background-color: @color-elogic-gray-main;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+    }
+
     //  Product Lists
 
     .product-item {
@@ -296,6 +361,8 @@
     }
 
     .group__product {
+        .lib-vendor-prefix-flex-direction(column);
+
         .group_product__item {
             width: 100%;
         }
