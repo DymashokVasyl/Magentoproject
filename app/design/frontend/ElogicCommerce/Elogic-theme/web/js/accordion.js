@@ -25,14 +25,17 @@ define([
     
 
         _create: function () {
+            $(this.options.selector).collapsible(this.options.collapsibleOptions);
+
+
             mediaCheck({
                 media: '(min-width: 767px)',
                 entry: function () {
-                    $(this.options.selector).collapsible( "disable" );
-                    $(this.options.selector).collapsible( "destroy" );
+                    $(this.options.selector).collapsible( "deactivate" );
                 }.bind(this),
                 exit: function () {
-                        $(this.options.selector).collapsible(this.options.collapsibleOptions);
+                    $(this.options.selector).collapsible("activate");
+
                 }.bind(this),
             });
         },

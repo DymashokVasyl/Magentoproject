@@ -19,20 +19,25 @@
             <block class="Magento\Framework\View\Element\Template" name="scripts"
                 template="Magento_Theme::scripts.phtml" after="-" />
         </referenceContainer>
-        <referenceBlock name="footer_links" remove="true" />
-        <referenceBlock name="copyright" remove="true" />
+
         <!-- Move -->
         <move element="logo" destination="logo.wrapper" after="-" />
         <move element="navigation.sections" destination="menu.wrapper" after="-" />
         <move element="top.links" destination="action.wrapper" after="-" />
         <move element="minicart" destination="top.links" before="wish-list-link" />
         <move element="top.search" destination="top.links" before="minicart" />
-        <move element="form.subscribe" destination="footer-container" before="-" />
         <!-- Remove -->
         <referenceBlock name="register-link" remove="true" /> <!-- for Create Account Link -->
         <referenceBlock name="my-account-link" remove="true" />
         <referenceBlock name="header.panel.wrapper" remove="true" />
         <referenceBlock name="store.links" remove="true" />
         <referenceBlock name="store.settings" remove="true" />
+        <referenceBlock name="giftr-top-link" remove="true" />
+
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+
+        <referenceBlock name="form.subscribe" remove="true" />
+
     </body>
 </page>

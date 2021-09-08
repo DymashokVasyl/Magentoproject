@@ -9,6 +9,7 @@ var config = {
         'elogicSlider': 'js/elogicSlider',
         'elogicAccordion': 'js/accordion',
         'elogicSelect': 'js/elogicSelect',
+        'elogicGiftr': 'js/elogicGiftr',
     },
 
     shim: {
@@ -19,4 +20,11 @@ var config = {
             deps: ['jquery'],
         },
     },
+    config: {
+        mixins: {
+            'Mirasvit_Giftr/js/item': {
+                'js/itemMixin': true
+            }
+        }
+    }
 };

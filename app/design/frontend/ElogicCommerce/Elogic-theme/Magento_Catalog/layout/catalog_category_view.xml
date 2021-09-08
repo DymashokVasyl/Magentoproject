@@ -3,6 +3,8 @@
     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
     <body>
+        <referenceContainer name="main.content" htmlClass="page-main container" />
+
         <referenceContainer name="sidebar.main">
             <block class="Magento\Framework\View\Element\Template" name="scripts.catalog"
                 template="Magento_Catalog::js.phtml" />
