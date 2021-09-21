@@ -1,22 +1,72 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Luma theme variables
-//  _____________________________________________
-
 //
 //  Typography
 //  ---------------------------------------------
 
 //  Fonts
+
+@font-family-name__poppins: 'Poppins';
+@font-family-name__oswald: 'Oswald';
+@font-family-awesome: "Font Awesome 5 Free";
+
 @font-family-name__base: 'Open Sans';
-@font-family__base: @font-family-name__base, @font-family__sans-serif;
+@font-family__base: @font-family-name__poppins, @font-family-name__base, @font-family__sans-serif;
+
+// Font sizes
+
+@font-size__elogic__xs: floor(.75 * @font-size__base); // 11px
+@font-size__elogic__s:  ceil(.85 * @font-size__base); // 12
+@font-size__elogic__sl: ceil(1.15 * @font-size__base); // 16px
+@font-size__elogic__sxl: ceil(1.25 * @font-size__base); // 18px
+@font-size__elogic__ls: ceil(1.7 * @font-size__base); // 24px
+@font-size__elogic__l: ceil(1.85 * @font-size__base); // 26px
+@font-size__elogic__xl: ceil(2.55 * @font-size__base); // 36px
+
+//   Font-Weights
+
+@font-weight-icons: 900;
+
+// Color Pool
+@color-elogic-black: #222;
+@color-elogic-gray-main: #888;
+@color-elogic-gray-dark: #333;
+@color-elogic-gray-secondary: #eee;
+@color-elogic-gray-discount: #555;
+@color-elogic-gray: #777;
+@color-elogic-white: #fff;
+@color-elogig-bg:#f3f3f3;
+@color-elogic-darked-gold:rgba(186, 147, 62, .3);
+
+
+// Icons
+
+@icon-elogic-users: '\f007';
+@icon-elogic-shopping-cart: '\f07a';
+@icon-elogic-angle-up: '\f106';
+@icon-elogic-angle-down: '\f107';
+@icon-elogic-angle-right: '\f105';
+@icon-elogic-close: '\f00d';
+@icon-elogin-eye:"\f06e";
+@icon-elogin-heart:"\f004";
+@icon-elogin-balance-scale:"\f24e";
+@icon-elogic-gift:'\f06b';
+
+
 
 //  Colors nesting
 @page__background-color: @color-white;
+@banner__background-image: linear-gradient(to right, rgba(136,136,136,0.15) 0%,rgba(144,144,144,0.15) 5%,rgba(243,243,243,0.43) 70%,rgba(190,190,190,0.5) 85%,rgba(136,136,136,0.5) 100%), url('@{baseDir}images/background-img.png');
+
+// New Responsive variables
+@screen__l:992px;
+@screen__xl:1200px; 
+@screen__xxl: 1440px;
+
+//
+//  Indents
+//  ---------------------------------------------
+
+@indent__base: @line-height__computed; // 20px
+@indent__sl: @indent__base - 5; // 15px
 
 //
 //  Icons
