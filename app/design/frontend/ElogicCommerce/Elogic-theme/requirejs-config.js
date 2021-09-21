@@ -10,6 +10,7 @@ var config = {
         'elogicAccordion': 'js/accordion',
         'elogicSelect': 'js/elogicSelect',
         'elogicGiftr': 'js/elogicGiftr',
+        'jQueryUi': 'js/plugins/jquery-ui-11',
     },
 
     shim: {

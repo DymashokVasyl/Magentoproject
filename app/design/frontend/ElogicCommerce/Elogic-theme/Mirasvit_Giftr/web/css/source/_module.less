@@ -8,7 +8,7 @@
         .lib-css(background-color, @color-elogic-white);
         .lib-css(border, 1px solid @color-elogic-gray-secondary);
         .lib-vendor-prefix-display(inline-flex);
-        .lib-css(justify-content, center);
+        .lib-vendor-justify-content(center);
         .lib-vendor-box-align(center);
         .lib-css(width, 40px);
         .lib-css(height, 40px);
@@ -101,9 +101,12 @@
             transform: translateY(var(--t));
             transition: opacity .3s ease, transform .4s cubic-bezier(.2, .9, .4, 1.1);
             li {
-                padding: 8px 36px 8px 12px;
                 cursor: pointer;
 
+                label{
+                    display: block;
+                    padding: 8px 36px 8px 12px;
+                }
             }
         }
         & > ul {
@@ -115,6 +118,10 @@
                 &:hover {
                     
                     color: rgba(255, 255, 255, .5);
+                }
+
+                label{
+                    display: block;
                 }
             }
         }
@@ -187,9 +194,7 @@
 
             .add_to_giftr {
                 display: block;
-                // margin: @indent__s auto;
                 margin: @indent__l auto;
-
                 max-width: max-content;
                 .lib-css(background-color, @color-elogic-black);
                 .lib-css(color, @color-elogic-white);
@@ -212,9 +217,9 @@
                 label {
                     .lib-css(color, @color-elogic-gray-main);
                     .lib-css(font-weight, @font-weight__regular);
-                    line-height: 22px;
-                    margin-bottom: @indent__s;
-                    text-transform: capitalize;
+                    .lib-css(line-height,22px);
+                    .lib-css(margin-bottom, @indent__s);
+                    .lib-css(text-transform,capitalize);
                 }
             }
 
@@ -223,9 +228,7 @@
 
                 label {
                     .lib-css(font-weight, @font-weight__regular);
-                    line-height: 22px;
-                    margin-bottom: @indent__s;
-                    text-transform: capitalize;
+                    .lib-css(text-transform,capitalize);
                 }
             }
         }

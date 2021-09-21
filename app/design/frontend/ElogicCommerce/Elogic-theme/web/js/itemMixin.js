@@ -2,10 +2,11 @@ define([
     'jquery',
     'Magento_Customer/js/customer-data',
     'mage/url'
-], function($, customerData, url) {
+], function ($, customerData, url) {
     'use strict';
 
     var loginUrl = url.build('customer/account/login');
+    var oneInit = true;
     const mixin = {
 
         initialize: function () {
@@ -13,7 +14,7 @@ define([
             this.initRegistries();
         },
 
-        initRegistries: function() {
+        initRegistries: function () {
             var customerRegistries = customerData.get('gift-registry')();
 
             this.isLoggedIn(customerRegistries.is_logged_in || false);
@@ -22,16 +23,21 @@ define([
             this.hasRegistries(this.registries().length > 0);
         },
 
-        getData: function() {
+        getData: function () {
             var data = $('#product_addtocart_form').serializeArray();
             if (_.size(this.selected()) > 0) {
-                data.push({name: 'registries', value: _.map(this.selected(), function(value) { return value })});
+                data.push({
+                    name: 'registries',
+                    value: _.map(this.selected(), function (value) {
+                        return value
+                    })
+                });
             }
 
             return data;
         },
 
-        addProduct: function() {
+        addProduct: function () {
             if (!$('#product_addtocart_form').valid()) {
                 return false;
             }
@@ -43,9 +49,7 @@ define([
                 dataType: 'json',
                 showLoader: true,
                 success: function (response) {
-                    var giftr = $('[data-block="addtogiftr"]');
-                    giftr.find('[data-role="dropdownDialog"]').dropdownDialog("close");
-                    $('.giftr-dropdown').hide();
+                    $('.giftr-list').modal('closeModal');
                     if (response.status == this.login) {
                         setLocation(response.message);
                     }
@@ -53,22 +57,26 @@ define([
             });
         },
 
-        isMessageVisible: function() {
+        isMessageVisible: function () {
             return !this.hasRegistries() || !this.isLoggedIn();
         },
 
-        showModal:function() {
-            $('.giftr-list').modal('openModal'); 
+        showModal: function () {
+            $('.giftr-list').modal('openModal');
         },
 
         toRedirect: function () {
             if (!this.isLoggedIn()) {
                 window.location.href = loginUrl;
             } else {
-                if(this.registries().length == 1){
+                if (this.registries().length == 1) {
                     this.addProduct();
                 } else {
                     this.showModal();
+                    if (oneInit) {
+                        $(`.registries label:first-child input`).trigger( "click" );
+                        oneInit = false;
+                    }
                 }
             }
         },
@@ -80,3 +88,5 @@ define([
     };
 
 });
+
+

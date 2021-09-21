@@ -15,7 +15,8 @@
         padding: @indent__l 0;
         margin: 0 @indent__sl;
         .lib-vendor-prefix-display(flex);
-        justify-content: space-between;
+        .lib-vendor-justify-content(space-between);
+
     }
 
     .newsletter_wrap__text {
@@ -82,10 +83,12 @@
 
         .content {
             width: 100%;
-            justify-content: center;
+            .lib-vendor-justify-content(center);
+
 
             .control {
-                justify-content: center;
+                .lib-vendor-justify-content(center);
+
 
                 input[type=email] {
                     width: 50%;
@@ -114,7 +117,8 @@
 
         .content {
             flex: 0 0 50%;
-            justify-content: flex-start;
+            .lib-vendor-justify-content(flex-start);
+
 
             .control {
 
@@ -167,10 +171,12 @@
 
         .content {
             width: 100%;
-            justify-content: center;
+            .lib-vendor-justify-content(center);
+
 
             .control {
-                justify-content: center;
+                .lib-vendor-justify-content(center);
+
 
                 input[type=email] {
                     width: 50%;
